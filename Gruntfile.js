@@ -8,10 +8,12 @@ module.exports = function(grunt) {
       build: {
         config: 'acetate.conf.js'
       },
-      watch: {
+      dev: {
         config: 'acetate.conf.js',
         options: {
-          watch: true
+          server: true,
+          watch: true,
+          keepalive: true
         }
       }
     },
@@ -33,6 +35,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['acetate:build']);
+  grunt.registerTask('default', ['acetate:dev']);
   grunt.registerTask('deploy', ['acetate:build', 'gh-pages']);
 };
