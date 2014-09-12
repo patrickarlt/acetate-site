@@ -1,0 +1,79 @@
+@import 'reset';
+
+// Colors
+$cream: #FEFFF8;
+$dark-cream: #F9FAF3;
+$darker-cream: #EFF0E9;
+$dark-gray: #273C52;
+$blue: #249AF3;
+$green: #3FA369;
+
+// Fonts
+$body-font: 'Roboto', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+$header-font: 'Unica One';
+
+html {
+  font-family: $body-font;
+  font-weight: 300;
+  background-color: $cream;
+  color: $dark-gray;
+  border-top: 3px solid $blue;
+}
+
+body {
+  font-size: 18px;
+}
+
+b, strong, em {
+  font-weight: 400;
+}
+
+pre {
+  font-size: 1rem;
+  padding: 1.5em;
+  border-left: 4px solid $darker-cream;
+  background-color: $dark-cream;
+  border-radius: .3em;
+}
+
+code {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+  margin: 2em 0;
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+  border-bottom: 2px solid trasparent;
+  &:hover, &:focus {
+    border-bottom: 2px solid $green;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+  text-transform: uppercase;
+}
+
+article {
+  max-width: 35em;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+.banner {
+  text-align: center;
+  background-image: url(../img/);
+}
+
+.logo {
+  font-size: 2rem;
+  color: $blue;
+  letter-spacing: .25em;
+  text-shadow: 4px 4px $darker-cream;
+}

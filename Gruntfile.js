@@ -8,23 +8,29 @@ module.exports = function(grunt) {
       build: {
         config: 'acetate.conf.js'
       },
-      dev: {
+      watch: {
         config: 'acetate.conf.js',
         options: {
-          server: true,
           watch: true,
-          keepalive: true
+          server: true
         }
       }
     },
     watch: {
-      acetate: {
-        files: ['src/**/*'],
-        tasks: ['acetate:build'],
+      sass: {
+        files: ['src/assets/sass/**/*'],
+        tasks: ['sass'],
       }
     },
-    concurrent: {
-      dev: ['acetate:watch'],
+    sass: {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: {
+          'build/assets/css/main.css': 'src/assets/sass/main.scss'
+        }
+      }
     },
     'gh-pages': {
       options: {
@@ -35,6 +41,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['acetate:dev']);
-  grunt.registerTask('deploy', ['acetate:build', 'gh-pages']);
+  grunt.registerTask('default', ['sass', 'acetate:watch', 'watch']);
+  grunt.registerTask('deploy', ['acetate:build', 'sass', 'gh-pages']);
 };
