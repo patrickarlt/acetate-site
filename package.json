@@ -9,11 +9,12 @@
   "author": "",
   "license": "BSD-2-Clause",
   "devDependencies": {
+    "acetate": "0.0.7",
     "grunt": "~0.4.5",
-    "grunt-acetate": "0.0.3",
-    "acetate": "0.0.3",
+    "grunt-acetate": "0.0.5",
     "grunt-concurrent": "~1.0.0",
     "grunt-gh-pages": "^0.9.1",
+    "grunt-sass": "^0.14.1",
     "load-grunt-tasks": "~0.6.0",
     "minimist": "~1.1.0"
   },
