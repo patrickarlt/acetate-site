@@ -16,6 +16,11 @@ article, .container {
   float: right;
 }
 
+.padded {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
 // Grid
 .block-group {
   font-family: monospace;
@@ -117,7 +122,7 @@ $duration3: 90s;
   left: 0;
   height: 1200px;
   width: 100%;
-  background: url(../img/front-01.svg) top center transparent;
+  background: url(../img/front.svg) top center transparent;
   @include prefixer (animation, up $duration1 infinite linear, webkit moz spec);
   @include prefixer (transform, translate3d(0, 600px, 0), webkit moz spec);
   &.delayed {
@@ -125,7 +130,7 @@ $duration3: 90s;
   }
   &.center {
     opacity: .7;
-    background-image: url(../img/center-01.svg);
+    background-image: url(../img/center.svg);
     @include prefixer (animation-duration, $duration2, webkit moz spec);
     &.delayed {
       @include prefixer (animation-delay, $duration2 * .5, webkit moz spec);
@@ -133,7 +138,7 @@ $duration3: 90s;
   }
   &.back {
     opacity: .5;
-    background-image: url(../img/back-01.svg);
+    background-image: url(../img/back.svg);
     @include prefixer (animation-duration, $duration3, webkit moz spec);
     &.delayed {
       @include prefixer (animation-delay, $duration3 * .5, webkit moz spec);
@@ -177,11 +182,3 @@ $duration3: 90s;
     @include prefixer (transform, translate3d(0, -100%, 0), webkit moz spec);
   }
 }
-
-// Homepage Features
-.one-third {
-
-}
-
-
-

@@ -109,8 +109,13 @@ table {
     }
   }
 
-  // thead, tfoot, tr.divider {
-  //   font-weight: bold;
-  // }
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.small {
+  font-size: .95rem;
 }
