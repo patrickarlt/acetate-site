@@ -4,28 +4,56 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    acetate: {
+
+    'acetate': {
       build: {
         config: 'acetate.conf.js'
       },
-      dev: {
+      watch: {
         config: 'acetate.conf.js',
         options: {
-          server: true,
           watch: true,
-          keepalive: true
+          server: true
         }
       }
     },
-    watch: {
-      acetate: {
-        files: ['src/**/*'],
-        tasks: ['acetate:build'],
+
+    'watch': {
+      sass: {
+        files: ['src/assets/sass/**/*'],
+        tasks: ['sass']
+      },
+      img: {
+        files: ['src/assets/img/**/*'],
+        tasks: ['newer:imagemin']
       }
     },
-    concurrent: {
-      dev: ['acetate:watch'],
+
+    // Build site sass
+    'sass': {
+      expanded: {
+        options: {
+          style: 'expanded',
+          sourcemap: 'none'
+        },
+        files: {
+          'build/assets/css/main.css': 'src/assets/sass/main.scss'
+        }
+      }
     },
+
+    // Optimize images
+    'imagemin': {
+      doc: {
+        files: [{
+          expand: true,
+          cwd: 'src/assets/img',
+          src: ['**/*.{png,jpg,svg}'],
+          dest: 'build/assets/img/'
+        }]
+      }
+    },
+
     'gh-pages': {
       options: {
         base: 'build',
@@ -35,6 +63,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['acetate:dev']);
-  grunt.registerTask('deploy', ['acetate:build', 'gh-pages']);
+  grunt.registerTask('default', ['newer:imagemin', 'sass', 'acetate:watch', 'watch']);
+  grunt.registerTask('deploy', ['acetate:build', 'sass', 'newer:imagemin', 'gh-pages']);
 };

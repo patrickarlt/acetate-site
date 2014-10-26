@@ -1,0 +1,83 @@
+// Prefixer Mixin
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default;
+
+@mixin prefixer ($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      @if $prefix-for-webkit {
+        -webkit-#{$property}: $value;
+      }
+    }
+    @else if $prefix == moz {
+      @if $prefix-for-mozilla {
+        -moz-#{$property}: $value;
+      }
+    }
+    @else if $prefix == ms {
+      @if $prefix-for-microsoft {
+        -ms-#{$property}: $value;
+      }
+    }
+    @else if $prefix == o {
+      @if $prefix-for-opera {
+        -o-#{$property}: $value;
+      }
+    }
+    @else if $prefix == spec {
+      @if $prefix-for-spec {
+        #{$property}: $value;
+      }
+    }
+    @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+// Box Sizing Mixin
+@mixin box-sizing ($box) {
+  @include prefixer(box-sizing, $box, webkit moz spec);
+}
+
+// Transition Mixin
+$transition-prefixes: webkit spec;
+
+@mixin transition ($value...) {
+  @include prefixer (transition, $value, $transition-prefixes);
+}
+
+@mixin transition-property ($value...) {
+  @include prefixer (transition-property, $value, $transition-prefixes);
+}
+
+@mixin transition-duration ($value...) {
+  @include prefixer (transition-duration, $value, $transition-prefixes);
+}
+
+@mixin transition-timing-function ($value...) {
+  @include prefixer (transition-timing-function, $value, $transition-prefixes);
+}
+
+@mixin transition-delay ($value...) {
+  @include prefixer (transition-delay, $value, $transition-prefixes);
+}
+
+// Keyframes Mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
