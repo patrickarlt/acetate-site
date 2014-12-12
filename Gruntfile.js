@@ -17,8 +17,7 @@ module.exports = function(grunt) {
         options: {
           watch: true,
           server: true,
-          keepalive: true,
-          logLevel: 'verbose'
+          logLevel: 'debug'
         }
       }
     },

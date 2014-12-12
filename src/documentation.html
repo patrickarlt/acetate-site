@@ -1,12 +1,67 @@
 ---
 title: Acetate
 active: documentation
+layout: false
 ---
 
-<article>
+{% extends "layouts/_documentation" %}
 
+{% block sidebar %}
+<nav>
+  <section>
+    <h3>Configuration</h3>
+    <ul>
+      <li><a href="">Basic Example</a></li>
+      <li><a href="">Options</a></li>
+      <li><a href="">Globals</a></li>
+      <li><a href="">Extensions</a></li>
+      <li><a href="">Command-line Arguments</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Pages</h3>
+    <ul>
+      <li><a href="">Creating Pages</a></li>
+      <li><a href="">Metadata</a></li>
+      <li><a href="">Templating</a></li>
+      <li><a href="">Built-in Helpers</a></li>
+      <li><a href="">Layouts</a></li>
+      <li><a href="">Nested Layouts</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Data</h3>
+    <ul>
+      <li><a href="">YAML</a></li>
+      <li><a href="">JSON</a></li>
+      <li><a href="">JavaScript</a></li>
+      <li><a href="">Using Data</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Collections</h3>
+      <ul>
+        <li><a href="">Creating Collections</a></li>
+        <li><a href="">Using Collections</a></li>
+      </ul>
+  </section>
+
+  <section>
+    <h3>Custom Extensions</h3>
+    <ul>
+      <li><a href="">Basic Example</a></li>
+      <li><a href="">Extending Nunjucks</a></li>
+      <li><a href="">Extending Markdown</a></li>
+    </ul>
+  </section>
+</nav>
+{% endblock %}
+
+{% block content %}
 {% markdown %}
-
 # Configuration
 
 Configuration is handled in the `acetate.conf.js` file. Besides setting where your source and build folders are, you can also set up environments, global variables, load extensions, configure `collections`, and ignore files.
@@ -45,41 +100,23 @@ acetate.options.src = 'source';
 
 Properties on the options object you can set from the config:
 
-| Setting     | Description                                   |
-| ----------- | --------------------------------------------- |
-| dest        | Folder you'd like to build the site to        |
-| src         | Folder containing the site's source files     |
-| data        | Folder containing data files (json, js, yml)  |
-| root        | Root directory for the acetate folder         |
-| markdownExt | RegEx for the markdown file extension         |
-| pageMatcher | Blob of all files that should become pages    |
-| dataMathcer | Blob of all files that can be site data       |
-
-Options Properties Defaults:
-
-```
-dest: 'build',
-src: 'src',
-data: 'data',
-root: process.cwd(),
-markdownExt: /\.(md|markdown)/,
-pageMatcher: '**/*.+(md|markdown|html)',
-dataMatcher: '**/*.+(js|json|yaml|yml)'
-```
-
+| Setting     | Description                                   | Default |
+| ----------- | --------------------------------------------- | ------------------ |
+| dest        | Folder you'd like to build the site to        | `'build'` |
+| src         | Folder containing the site's source files     | `'src'` |
+| data        | Folder containing data files (json, js, yml)  | `'data'` |
+| root        | Root directory for the acetate folder         | `process.cwd()` |
+| markdownExt | RegEx for the markdown file extension         | <code>/\.(md&#124;markdown)/</code> |
+| pageMatcher | Blob of all files that should become pages    | <code>**/*.+(md&#124;markdown&#124;html)</code> |
+| dataMathcer | Blob of all files that can be site data       | <code>**/*.+(js&#124;json&#124;yaml&#124;yml)</code> |
 
 # Global
 
-
 # Layouts
-
 
 # Options
 
-
 # Collections
 
-
 {% endmarkdown %}
-
-</article>
+{% endblock %}
