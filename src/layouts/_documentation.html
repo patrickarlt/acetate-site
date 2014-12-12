@@ -1,0 +1,15 @@
+{% extends "layouts/_layout" %}
+
+{% block main %}
+  <div class="layout-sidebar">
+    <aside>
+      <nav>
+        {% block sidebar %}{% endblock %}
+      </nav>
+    </aside>
+
+    <article>
+      {% block content %}{% endblock %}
+    </article>
+  </div>
+{% endblock %}
