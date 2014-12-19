@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       build: {
         config: 'acetate.conf.js',
         options: {
-          logLevel: 'verbose'
+          logLevel: 'debug'
         }
       },
       watch: {
