@@ -9,7 +9,7 @@
   "author": "",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "acetate": "0.0.7",
+    "acetate": "0.0.8",
     "grunt": "~0.4.5",
     "grunt-acetate": "0.0.5",
     "grunt-contrib-imagemin": "^0.8.1",
