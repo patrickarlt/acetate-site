@@ -16,8 +16,7 @@ module.exports = function(grunt) {
         config: 'acetate.conf.js',
         options: {
           watch: true,
-          server: true,
-          logLevel: 'debug'
+          server: true
         }
       }
     },
