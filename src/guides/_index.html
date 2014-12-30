@@ -1,0 +1,12 @@
+TEMPLATE!
+
+{% for group in guides.groups %}
+  <h4>{{group.name}}</h4>
+  <ul>
+    {% for page in group.pages %}
+      <li><a href="{{page.url}}">{{ page.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
+TEMPLATE!
