@@ -7,14 +7,15 @@ module.exports = function(grunt) {
 
     'acetate': {
       build: {
-        config: 'acetate.conf.js',
+        config: 'acetate/acetate.conf.js',
         options: {
           logLevel: 'debug'
         }
       },
       watch: {
-        config: 'acetate.conf.js',
+        config: 'acetate/acetate.conf.js',
         options: {
+          logLevel: 'debug',
           watch: true,
           server: true
         }
