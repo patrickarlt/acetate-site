@@ -60,9 +60,11 @@ module.exports = function(grunt) {
         repo: 'https://github.com/patrickarlt/acetate.git'
       },
       src: ['**']
-    }
+    },
+
+    clean: ["build"]
   });
 
   grunt.registerTask('default', ['newer:imagemin', 'sass', 'acetate:watch', 'watch']);
-  grunt.registerTask('deploy', ['acetate:build', 'sass', 'newer:imagemin', 'gh-pages']);
+  grunt.registerTask('deploy', ['clean', 'acetate:build', 'sass', 'newer:imagemin', 'gh-pages']);
 };
