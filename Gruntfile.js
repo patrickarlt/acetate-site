@@ -1,7 +1,5 @@
 module.exports = function(grunt) {
 
-  require('load-grunt-tasks')(grunt);
-
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -12,8 +10,7 @@ module.exports = function(grunt) {
       watch: {
         config: 'acetate.conf.js',
         options: {
-          watch: true,
-          server: true
+          watcher: true
         }
       }
     },
@@ -62,9 +59,21 @@ module.exports = function(grunt) {
       src: ['**']
     },
 
-    clean: ["build"]
+    clean: ["build"],
+
+    browserSync: {
+      site: {
+        options: {
+          server: "./build",
+          background: true
+        },
+        src : ['build/**.*'],
+      }
+    }
   });
 
-  grunt.registerTask('default', ['newer:imagemin', 'sass', 'acetate:watch', 'watch']);
+  require('load-grunt-tasks')(grunt);
+
+  grunt.registerTask('default', ['newer:imagemin', 'sass', 'acetate:watch', 'browserSync', 'watch']);
   grunt.registerTask('deploy', ['clean', 'acetate:build', 'sass', 'newer:imagemin', 'gh-pages']);
 };
