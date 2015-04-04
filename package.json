@@ -1,23 +1,27 @@
 {
   "name": "acetate-site",
   "version": "0.0.0",
-  "description": "",
+  "description": "Website and documentation for the Acetate static site generator",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:patrickarlt/acetate-site.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "BSD-2-Clause",
+  "author": "Patrick Arlt",
+  "license": "MIT",
   "devDependencies": {
     "acetate": "0.0.8",
     "grunt": "~0.4.5",
     "grunt-acetate": "0.0.5",
     "grunt-contrib-imagemin": "^0.8.1",
-    "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-gh-pages": "^0.9.1",
+    "grunt-libsass": "^0.2.0",
     "grunt-newer": "^0.7.0",
-    "load-grunt-tasks": "~0.6.0",
-    "minimist": "~1.1.0"
+    "grunt-sass": "^0.18.1",
+    "load-grunt-tasks": "~0.6.0"
   }
 }
