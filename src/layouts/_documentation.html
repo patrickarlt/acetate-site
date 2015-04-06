@@ -1,80 +1,68 @@
 {% extends "layouts/_layout" %}
 
 {% block main %}
-  <div class="layout-sidebar">
-    <aside>
-      <nav>
-        <section>
-          <h3>Installation</h3>
-          <ul>
-            <li><a href="">Project setup</a></li>
-            <li><a href="">Command-line usage</a></li>
-            <li><a href="">Using with Grunt</a></li>
-            <li><a href="">Using with Gulp</a></li>
-          </ul>
+  <div class="grid-container">
+  <aside class="column-6">
+    <nav class="topic-list">
+      <section>
+        <a href="/documentation/">Getting Started</a>
 
-          <h3>Configuration</h3>
-          <ul>
-            <li><a href="">Basic Example</a></li>
-            <li><a href="">Options</a></li>
-            <li><a href="">Globals</a></li>
-            <li><a href="">Extensions</a></li>
-            <li><a href="">Sources</a></li>
-            <li><a href="">Command-line Flags</a></li>
-          </ul>
-        </section>
+        <h4>Tools &amp; Plugins</h4>
+        <ul>
+          <li><a href="/documentation/command-line/">Command Line</a></li>
+          <li><a href="/documentation/grunt-plugin/">Grunt Plugin</a></li>
+          <li><a href="/documentation/gulp-usage/">Using with Gulp</a></li>
+        </ul>
+      </section>
 
-        <section>
-          <h3>Pages</h3>
-          <ul>
-            <li><a href="">Creating Pages</a></li>
-            <li><a href="">Metadata</a></li>
-            <li><a href="">Templating</a></li>
-            <li><a href="">Built-in Helpers</a></li>
-            <li><a href="">Layouts</a></li>
-            <li><a href="">Nested Layouts</a></li>
-          </ul>
-        </section>
+      <section>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="/documentation/introduction-to-pages/">Introduction</a></li>
+          <li><a href="/documentation/frontmatter/">Frontmatter</a></li>
+          <li><a href="/documentation/templating/">Templating</a></li>
+          <li><a href="/documentation/data/">Data Sources</a></li>
+          <li><a href="/documentation/layouts/">Layouts</a></li>
+          <li><a href="/documentation/partials/">Partials</a></li>
+          <li><a href="/documentation/page-helpers/">Built-in Helpers</a></li>
 
-        <section>
-          <h3>Data</h3>
-          <ul>
-            <li><a href="">Loading Data</a></li>
-            <li><a href="">YAML</a></li>
-            <li><a href="">JSON</a></li>
-            <li><a href="">JavaScript</a></li>
-            <li><a href="">Accessing Data</a></li>
-          </ul>
-        </section>
+        </ul>
+      </section>
 
-        <section>
-          <h3>Collections</h3>
-            <ul>
-              <li><a href="">Creating Collections</a></li>
-              <li><a href="">Using Collections</a></li>
-            </ul>
-        </section>
+      <section>
+        <h4>Configuration</h4>
+        <ul>
+          <li><a href="/documentation/config-options/">Options</a></li>
+          <li><a href="/documentation/global-variables/">Globals</a></li>
+          <li><a href="/documentation/page-sources/">Sources</a></li>
+          <li><a href="/documentation/config-helpers/">Helpers</a></li>
+          <li><a href="/documentation/command-line-flags/">Command-line Flags</a></li>
+        </ul>
+      </section>
 
-        <section>
-          <h3>Groups</h3>
-            <ul>
-              <li><a href="">Creating Collections</a></li>
-              <li><a href="">Using Collections</a></li>
-            </ul>
-        </section>
+      <section>
+        <h4>Organizing Pages</h4>
+        <ul>
+          <li><a href="/documentation/collections/">Collections</a></li>
+          <li><a href="/documentation/groups/">Groups</a></li>
+        </ul>
+      </section>
 
-        <section>
-          <h3>Custom Extensions</h3>
-          <ul>
-            <li><a href="">Basic Example</a></li>
-            <li><a href="">Extending Nunjucks</a></li>
-            <li><a href="">Extending Markdown</a></li>
-          </ul>
-        </section>
-      </nav>
+      <section>
+        <h4>Extending</h4>
+        <ul>
+          <li><a href="/documentation/writing-custom-extensions/">Custom Extensions</a></li>
+          <li><a href="/documentation/adding-template-helpers/">Template Helpers</a></li>
+          <li><a href="/documentation/adding-filters/">Adding Filters</a></li>
+          <li><a href="/documentation/adding-custom-tags/">Custom Tags</a></li>
+          <li><a href="/documentation/customizing-markdown/">Customizing Markdown</a></li>
+        </ul>
+      </section>
+    </nav>
     </aside>
 
-    <article>
+    <article class="column-18">
+      <h1>{{title}}</h1>
       {% block content %}{% endblock %}
     </article>
   </div>

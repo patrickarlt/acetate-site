@@ -1,56 +1,10 @@
 @import 'config';
 @import 'utils';
+@import 'scales';
 @import 'reset';
 @import 'type';
+@import 'grid';
 @import 'highlight';
-
-// Layout Helpers
-article, .container {
-  max-width: 64rem;
-  padding: .5rem;
-  box-sizing: border-box;
-  margin: 0 auto;
-}
-
-
-
-.layout-sidebar {
-  max-width: 64rem;
-  box-sizing: border-box;
-  margin: 0 auto;
-  aside {
-    box-sizing: border-box;
-    float: left;
-    width: 19rem;
-    padding: .5rem;
-    margin: 4rem 0 0 0;
-  }
-  article {
-    box-sizing: border-box;
-    width: 43rem;
-    padding: .5rem;
-    float: right;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-nav {
-  h3 {
-    text-align: left;
-    margin: 2rem 0 0 0;
-  }
-  ul {
-    font-size: 1.25rem;
-    margin-left: 0;
-    list-style-position: outside;
-    padding: 0 0 0 1.25rem;
-  }
-}
-
-.right {
-  float: right;
-}
 
 .padded {
   padding-top: 3rem;
@@ -78,6 +32,15 @@ nav {
   letter-spacing: normal;
   text-align: left;
   vertical-align: top;
+  h3 {
+    @include leader(1);
+    @include trailer(1);
+  }
+  img {
+    width: 85%;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .one-third {
@@ -93,13 +56,17 @@ nav {
   border-bottom: 1px solid darken($blue, 5%);
   text-transform: uppercase;
   font-family: $header-font;
-  font-size: 1.05rem;
+  font-size: 1.25rem;
+  font-weight: 700;
   letter-spacing: .05em;
+  .right a {
+    margin-left: 1.5rem;
+  }
   a {
+    box-sizing: border-box;
     float: left;
-    padding-bottom: 1em;
-    padding-top: .5em;
-    margin-right: 1.5em;
+    padding-top: 1em;
+    padding-bottom: 0.65em;
     color: $blue;
     border-bottom: 3px solid transparent;
     @include transition(border 200ms linear);
@@ -143,15 +110,16 @@ nav {
   color: $cream;
   z-index: 3;
   width: 80%;
+  text-shadow: 0 0 12px rgba(0,0,0,0.15);
   h1 {
-    font-size: 5rem;
-    letter-spacing: .75em;
+    @include font-size(8);
+    letter-spacing: .5em;
   }
 
   h2 {
+    @include font-size(5);
     letter-spacing: .25em;
   }
-
 }
 
 $duration1: 50s;
@@ -168,14 +136,14 @@ $duration3: 90s;
   @include prefixer (animation, up $duration1 infinite linear, webkit moz spec);
   @include prefixer (transform, translate3d(0, 600px, 0), webkit moz spec);
   &.delayed {
-    @include prefixer (animation-delay, $duration1 * .5, webkit moz spec);
+    @include prefixer (animation-delay, 1, webkit moz spec);
   }
   &.center {
     opacity: .7;
     background-image: url(../img/center.svg);
     @include prefixer (animation-duration, $duration2, webkit moz spec);
     &.delayed {
-      @include prefixer (animation-delay, $duration2 * .5, webkit moz spec);
+      @include prefixer (animation-delay, 2, webkit moz spec);
     }
   }
   &.back {
@@ -183,7 +151,7 @@ $duration3: 90s;
     background-image: url(../img/back.svg);
     @include prefixer (animation-duration, $duration3, webkit moz spec);
     &.delayed {
-      @include prefixer (animation-delay, $duration3 * .5, webkit moz spec);
+      @include prefixer (animation-delay, 3, webkit moz spec);
     }
   }
 }
@@ -206,6 +174,61 @@ $duration3: 90s;
   @include prefixer (animation-delay, 1.5s, webkit moz spec);
 }
 
+.topic-list {
+  @include leader(2);
+
+  section {
+    margin: 0 0 2rem;
+  }
+  h4 {
+    @include font-size(2);
+    margin: 2rem 0 1rem;
+    text-align: left;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    @inlucde font-size(-1);
+    padding: 0;
+    margin: 0;
+  }
+}
+
+a.btn, button {
+  font-family: $header-font;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background-color: $blue;
+  color: $cream;
+  border-radius: 2px;
+  border: none;
+  &:hover {
+    color: $cream;
+    background-color: $green;
+  }
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+code.filename {
+  display: block;
+  margin: 0 0 -1.5rem;
+}
+
+.filename + pre {
+  padding-top: 0;
+}
 
 @include keyframes(fadeIn) {
   0% {

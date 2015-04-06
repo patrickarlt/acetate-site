@@ -1,6 +1,6 @@
 ---
 title: Acetate
-active: home
+navStyle: on-blue
 ---
 
 <!-- Top Banner -->
@@ -8,8 +8,7 @@ active: home
 
   <div class="logo">
     <h1 class="fade-in delay-1">Acetate</h1>
-    <h2 class="fade-in delay-2">A Node.js Static Site Generator</h2>
-    <p class="fade-in delay-2">A static site generator with a focus on extensibility and easy integration into existing toolchains.</p>
+    <h2 class="fade-in delay-1">A Node.js Static Site Generator</h2>
   </div>
 
   <!-- Floating Graphics -->
@@ -18,116 +17,65 @@ active: home
 
 </div>
 
-<!-- Article acts as Container -->
-<article class="padded">
+<div class="grid-container">
+  <!-- Article acts as Container -->
+  <article class="column-24">
 
-<div class="block-group padded fade-in delay-3">
-  <div class="block one-third">
-    <img src="{{relativePath}}assets/img/focus.svg" alt="Focused">
-    <h3>Focus</h3>
-    <p class="small">Acetate doesn't do everything for you. It only handles html, markdown, and data. That keeps it fast, simple, and effective.</p>
-  </div>
-
-  <div class="block one-third">
+  <div class="block-group padded fade-in delay-1">
+    <div class="block one-third">
     <img src="{{relativePath}}assets/img/extend.svg" alt="Extensions">
-    <h3>Extentions</h3>
-    <p class="small">Write custom extensions in plain old JavaScript and use Nunjucks to write your own template tags.</p>
-  </div>
+      <h3>Extensiblity</h3>
+      <p>Bring in custom data with Node or write an extenstion to manipulate the extend Acetae's build process.</p>
+    </div>
 
-  <div class="block one-third">
-    <img src="{{relativePath}}assets/img/data.svg" alt="Data">
-    <h3>Data</h3>
-    <p class="small">Acetate accepts JSON, YML, and JS out of the box. You can even add data with custom extensions.</p>
+    <div class="block one-third">
+      <img src="{{relativePath}}assets/img/data.svg" alt="Data">
+      <h3>Integration</h3>
+      <p>Integrate Acetate into your existing toolchain and build process, whether its Gulp, Grunt or just the command line.</p>
+    </div>
+
+    <div class="block one-third">
+      <img src="{{relativePath}}assets/img/focus.svg" alt="Focused">
+      <h3>Focus</h3>
+      <p>Acetate only handles templating and building pages and lets you use whatever you want to build the rest of your application.</p>
+    </div>
+  </div>
+  </article>
+
+  <article class="column-24">
+  {% markdown %}
+
+  # Quick Start
+
+  To install Acetate, install the command line runner globally:
+
+  ```bash
+  $ npm install -g acetate-cli
+  ```
+
+  Then you can clone the Acetate sample project and `cd` into it:
+
+  ```bash
+  $ git clone https://github.com/patrickarlt/acetate-sample.git && cd ./acetate-sample
+  ```
+
+  Intall the dependencies with NPM:
+
+  ```bash
+  $ npm install
+  ```
+
+  Run the built-in development server:
+
+  ```bash
+  $ acetate server --open
+  ```
+
+  {% endmarkdown %}
+
+  </article>
+
+  <div  class="column-24 text-center padding-leader-3 padding-trailer-3">
+    <a href="/documentation" class="btn">Get Started</a>
   </div>
 </div>
-
-{% markdown %}
-
-# Install
-
-To install Acetate, install the command line runner globally and Acetate locally in your project :
-
-```bash
-npm install acetate --save-dev
-```
-
-```bash
-npm install -g acetate-cli
-```
-
-Then create a config file named `acetate.conf.js` in your project. Here's a simple example:
-
-```js
-module.exports = function (acetate) {
-  acetate.global('config', {
-    environment: 'dev',
-  });
-
-  acetate.layout('**/*', 'layouts/_layout:content');
-};
-```
-
-Then, to build your site just run:
-
-```bash
-actetate
-```
-
-If you'd like to use the built-in server, use:
-
-```bash
-acetate server
-```
-
-If you'd like to start from an existing Acetate project, you can use the [sample site](https://github.com/patrickarlt/acetate-sample):
-
-```bash
-npm install -g acetate-cli
-git clone https://github.com/patrickarlt/acetate-sample.git acetate-sample
-cd acetate-sample
-npm install
-acetate-server --open
-```
-
-# Using Grunt
-
-Acetate also works quite well with [Grunt](http://gruntjs.com/). In your grunt project just run:
-
-```bash
-npm install grunt-acetate --save-dev
-```
-
-And load it in the `Gruntfile.js`:
-
-```js
-grunt.loadNpmTasks('grunt-acetate');
-```
-
-In the task, you can have multiple targets. A common setup might be one task that just builds (for deployment) and one task that runs a server (for development):
-
-```js
-'acetate': {
-  build: {
-    config: 'acetate.conf.js'
-  },
-  watch: {
-    config: 'acetate.conf.js',
-    options: {
-      watch: true,
-      server: true
-    }
-  }
-}
-```
-
-Then, you can run a development server on port 3000:
-
-```bash
-grunt acetate:watch
-```
-
-This way you can use grunt-acetate as part of a larger Gruntfile where each module has one responsibility. Imagemin compresses your images, sass compiles your css, and uglify/concat create your production javascript. See [this site's Gruntfile](https://github.com/patrickarlt/acetate-site/blob/master/Gruntfile.js) for an example.
-
-{% endmarkdown %}
-
-</article>

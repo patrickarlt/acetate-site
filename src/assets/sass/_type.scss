@@ -1,3 +1,21 @@
+@import 'scales';
+
+@mixin leader-half()  { margin-top:    0.5 * $baseline; }
+@mixin trailer-half() { margin-bottom: 0.5 * $baseline; }
+@mixin padding-leader-half()  { padding-top:    0.5 * $baseline; }
+@mixin padding-trailer-half() { padding-bottom: 0.5 * $baseline; }
+
+@mixin leader($n)          { margin-top:     $n * $baseline; }
+@mixin trailer($n)         { margin-bottom:  $n * $baseline; }
+@mixin padding-leader($n)  { padding-top:    $n * $baseline; }
+@mixin padding-trailer($n) { padding-bottom: $n * $baseline; }
+
+@for $i from 0 through 5 {
+  .leader-#{$i}          { @include leader($i)          ;}
+  .trailer-#{$i}         { @include trailer($i)         ;}
+  .padding-leader-#{$i}  { @include padding-leader($i)  ;}
+  .padding-trailer-#{$i} { @include padding-trailer($i) ;}
+}
 
 html {
   background-color: $cream;
@@ -19,16 +37,18 @@ b, strong, em {
 code {
   font-family: $mono-font;
   font-size: 1rem;
-  padding: .25em;
-  background-color: $dark-cream;
+  padding: .125em .25em;
+  margin: 0 .125em;
+  background-color: $darker-cream;
   border: 1px solid $darker-cream;
   border-radius: .3rem;
+  display: inline-block;
 }
 
 pre {
-  font-size: 1rem;
-  padding: 1.5em;
-  border-bottom: 4px solid $darker-cream;
+  @include font-size(-1);
+  padding: 1em;
+  border: 3px solid $darker-cream;
   background-color: $dark-cream;
   border-radius: .3rem;
   code {
@@ -39,7 +59,7 @@ pre {
 }
 
 p {
-  margin: 2em 0;
+  margin: 1em 0;
 }
 
 a {
@@ -47,7 +67,8 @@ a {
   text-decoration: none;
   border-bottom: 2px solid trasparent;
   &:hover, &:focus {
-    border-bottom: 2px solid $blue;
+    color: $green;
+    border-bottom: 2px solid $green;
   }
 }
 
@@ -59,20 +80,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
   text-transform: uppercase;
   text-align: center;
-  margin: 2em 0 1em 0;
+  margin: 1em 0 0.5em 0;
 }
 
-h1 {font-size: 3.00rem;}
-h2 {font-size: 2.25rem;}
-h3 {font-size: 1.75rem;}
-h4 {font-size: 1.50rem;}
-h5 {font-size: 1.25rem;}
-h6 {font-size: 1.00rem;}
+h1 { @include font-size(6); }
+h2 { @include font-size(5); }
+h3 { @include font-size(4); }
+h4 { @include font-size(3); }
+h5 { @include font-size(2); }
+h6 { @include font-size(1); }
 
 table {
   width: 100%;
   margin-bottom: 1rem;
-  font-size: .95rem;
   font-family: $body-font;
   background-color: $cream;
   border-collapse: collapse;
@@ -118,4 +138,8 @@ img {
 
 .small {
   font-size: .95rem;
+}
+
+.text-center {
+  text-align: center;
 }

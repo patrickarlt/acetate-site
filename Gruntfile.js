@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     'watch': {
       sass: {
         files: ['src/assets/sass/**/*'],
-        tasks: ['sass']
+        tasks: ['sass', 'autoprefixer']
       },
       img: {
         files: ['src/assets/img/**/*'],
@@ -36,6 +36,17 @@ module.exports = function(grunt) {
         files: {
           'build/assets/css/main.css': 'src/assets/sass/main.scss'
         }
+      }
+    },
+
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 versions'],
+        map: true
+      },
+      build: {
+        src: 'build/assets/css/main.css',
+        dest: 'build/assets/css/main.css'
       }
     },
 
@@ -67,13 +78,13 @@ module.exports = function(grunt) {
           server: "./build",
           background: true
         },
-        src : ['build/**.*'],
+        src : ['build/**/*.*'],
       }
     }
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['newer:imagemin', 'sass', 'acetate:watch', 'browserSync', 'watch']);
-  grunt.registerTask('deploy', ['clean', 'acetate:build', 'sass', 'newer:imagemin', 'gh-pages']);
+  grunt.registerTask('default', ['newer:imagemin', 'sass', 'autoprefixer', 'acetate:watch', 'browserSync', 'watch']);
+  grunt.registerTask('deploy', ['clean', 'acetate:build', 'sass', 'autoprefixer', 'newer:imagemin', 'gh-pages']);
 };

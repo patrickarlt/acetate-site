@@ -11,3 +11,64 @@ $green: #a3be8c;
 $body-font: 'Karla', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 $header-font: 'Unica One', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 $mono-font: 'Menlo', 'Source Code Pro', monospace;
+
+// Scales
+$golden:           1.618;
+$minor-second:     1.067;
+$major-second:     1.125;
+$minor-third:      1.2;
+$major-third:      1.25;
+$perfect-fourth:   1.333;
+$augmented-fourth: 1.414;
+$perfect-fifth:    1.5;
+$minor-sixth:      1.6;
+$major-sixth:      1.667;
+$minor-seventh:    1.778;
+$major-seventh:    1.875;
+$octave:           2;
+$major-tenth:      2.5;
+$major-eleventh:   2.667;
+$major-twelfth:    3;
+$double-octave:    4;
+
+// Type
+$body-size:          1rem;
+$small-size:         0.95rem;
+$baseline:           1.5rem;
+$ratio:              $perfect-fifth;
+
+// Breakpoints
+$small:                    480px              !default;
+$medium:                   860px              !default;
+$large:                    1280px             !default;
+
+// Grid Configuration
+$vw-ratio:                 0.9;
+$container-width:          $vw-ratio * 100vw  !default;
+$container-min:            0                  !default;
+$container-max:            $large * $vw-ratio !default;
+$column-gutter:            1rem               !default;
+
+// Grid Fallback Options
+$ie8-support:              false              !default;
+$column-gutter-fallback:   20px               !default;
+$container-width-fallback: 960px              !default;
+
+// Large
+$large-class:              'column'           !default;
+$large-column-count:       24                 !default;
+
+// Medium
+$medium-class:             'tablet'           !default;
+$medium-column-count:      12                 !default;
+
+// Small
+$small-class:              'phone'            !default;
+$small-column-count:       6                  !default;
+
+// Rhythm
+$horizontal-range:         4                  !default;
+$vertical-range:           6                  !default;
+$baseline:                 1.55rem             !default;
+
+$fold-grid:                         true    !default;
