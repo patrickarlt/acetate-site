@@ -2,20 +2,11 @@
 title: Frontmatter
 ---
 
-All pages can declare local metadata to use in their tempaltes and configure their behavior. Acetate supports using both YAML and JSON to declare frontmatter.
+All pages can declare local metadata (as YAML) to use in their tempaltes and configure their behavior. Anything you declare in the frontmatter is accessable as a variable in your templates.
 
 ```
 ---
 title: Page with YAML metadata
----
-
-{% raw %}<h1>{{ title }}</h1>{% endraw %}
-```
-
-```
-{
-  "title": "Page with JSON metadata"
-}
 ---
 
 {% raw %}<h1>{{ title }}</h1>{% endraw %}
