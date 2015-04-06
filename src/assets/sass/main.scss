@@ -113,12 +113,12 @@
   text-shadow: 0 0 12px rgba(0,0,0,0.15);
   h1 {
     @include font-size(8);
-    letter-spacing: .5em;
+    letter-spacing: .35em;
   }
 
   h2 {
-    @include font-size(5);
-    letter-spacing: .25em;
+    @include font-size(4);
+    letter-spacing: .2em;
   }
 }
 
