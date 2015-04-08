@@ -38,9 +38,7 @@ You can also declare layouts for large amounts of pages in your config file with
 <code class="filename">acetate.conf.js</code>
 
 ```js
-module.exports = function(acetate){
-    acetate.layout('**.*', '_layout:page');
-}
+acetate.layout('**.*', '_layout:page');
 ```
 
 The first argument is a glob that will be used to match pages. The second is the `layout` key you want to apply.

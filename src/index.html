@@ -1,6 +1,7 @@
 ---
-title: Acetate
+json: "{\"foo\":\"bar\", \"baz\":\"bar\"}"
 navStyle: on-blue
+title: Acetate
 ---
 
 <!-- Top Banner -->
@@ -74,6 +75,8 @@ navStyle: on-blue
   {% endmarkdown %}
 
   </article>
+
+  {{ json | prettyJSON }}
 
   <div  class="column-24 text-center padding-leader-3 padding-trailer-3">
     <a href="/documentation" class="btn">Get Started</a>

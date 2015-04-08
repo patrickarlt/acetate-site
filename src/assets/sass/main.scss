@@ -195,6 +195,23 @@ $duration3: 90s;
     padding: 0;
     margin: 0;
   }
+  a {
+    border: none;
+    border-left: 3px solid transparent;
+    padding: 0 0 0 0.5rem;
+    margin-left: calc(-0.5rem + -3px);
+    &:hover {
+      color: $blue;
+      border-left-color: $blue;
+    }
+    &.is-active {
+      border-left-color: $green;
+      color: $green;
+    }
+  }
+  .is-active {
+
+  }
 }
 
 a.btn, button {
@@ -228,6 +245,12 @@ code.filename {
 
 .filename + pre {
   padding-top: 0;
+}
+
+.callout.note {
+  h5 {
+    text-align: left;
+  }
 }
 
 @include keyframes(fadeIn) {

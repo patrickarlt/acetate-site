@@ -1,3 +1,0 @@
----
-title: Adding Template Helpers
----
