@@ -1,5 +1,6 @@
 ---
 title: Built-in Page Helpers
+topic: Pages
 ---
 
 ## Page Variables

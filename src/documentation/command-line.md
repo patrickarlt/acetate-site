@@ -1,5 +1,6 @@
 ---
 title: Command Line
+topic: Tools & Plugins
 ---
 
 You can install a command line with npm:

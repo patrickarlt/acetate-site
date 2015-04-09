@@ -1,3 +1,4 @@
 ---
 title: Templating
+topic: Pages
 ---

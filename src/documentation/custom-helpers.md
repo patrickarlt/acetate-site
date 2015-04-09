@@ -1,3 +1,8 @@
+---
+title: Custom Helpers
+topic: Pages
+---
+
 ## Custom Filters
 
 Since Acetate exposes the Nunjucks object you can use it to add custom filters;

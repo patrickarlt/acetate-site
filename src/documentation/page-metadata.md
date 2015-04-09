@@ -1,5 +1,6 @@
 ---
 title: Page Metadata
+topic: Pages
 ---
 
 All pages can declare local metadata (as YAML) to use in their tempaltes and configure their behavior. Anything you declare in the frontmatter is accessable as a variable in your templates.

@@ -29,7 +29,16 @@ module.exports = function (acetate) {
     });
   });
 
-  acetate.nunjucks.addFilter('prettyJSON', function(str){
-    return "<pre>" + JSON.stringify(JSON.parse(str),null, '  ') + "</pre>";
+  acetate.metadata('documentation/*', {
+    topic: 'Misc.'
+  });
+
+  acetate.group('documentation', 'documentation/*', {
+    groupBy: "topic",
+    sortGroups: function(group){
+      var order = ['Pages', 'Configuration', 'Tools & Plugins', 'Misc.'];
+      return order.indexOf(group.name);
+    },
+    sortPages: 'order'
   });
 };

@@ -1,6 +1,8 @@
 ---
 title: Partials
+topic: Pages
 ---
+
 
 You can use build and include reusable templates accross multupile pages with Nunjucks `include` tag. Remember filenames that begin with `_` are not built so they are ideal for partials.
 

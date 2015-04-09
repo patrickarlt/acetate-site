@@ -1,5 +1,6 @@
 ---
 title: Grunt Plugin
+topic: Tools & Plugins
 ---
 
 For easy use with Grunt install the `grunt-acetate` plugin with this command:

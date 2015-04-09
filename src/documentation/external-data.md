@@ -1,5 +1,6 @@
 ---
 title: External Data
+topic: Pages
 ---
 
 Acetate can include data from external JSON and YAML files or use load Node modules to query data dynamically at built time. To load data files place the `.json` `.yaml` `.yml` or `.js` files in your source folder. Then inside a data object provide a map of data files to local template variables.

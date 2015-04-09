@@ -1,59 +1,27 @@
 {% extends "layouts/_layout" %}
 
 {% block main %}
-  <div class="grid-container">
+<div class="grid-container">
   <aside class="column-6">
     <nav class="topic-list">
-      <section>
+      {% link 'documentation/', 'Getting Started' %}
 
-        {% link 'documentation/', 'Getting Started' %}
-
-        <h4>Tools &amp; Plugins</h4>
-        <ul>
-          <li>{% link 'documentation/command-line/', 'Command Line' %}</li>
-          <li>{% link 'documentation/grunt-plugin/', 'Grunt Plugin' %}</li>
-          <li>{% link 'documentation/gulp-usage/', 'Using with Gulp' %}</li>
-        </ul>
-      </section>
-
-      <section>
-        <h4>Pages</h4>
-        <ul>
-          <li>{% link 'documentation/introduction-to-pages/', 'Introduction' %}</li>
-          <li>{% link 'documentation/page-metadata/', 'Page Metadata' %}</li>
-          <li>{% link 'documentation/templating/', 'Templating' %}</li>
-          <li>{% link 'documentation/layouts/', 'Layouts' %}</li>
-          <li>{% link 'documentation/partials/', 'Partials' %}</li>
-          <li>{% link 'documentation/external-data/', 'External Data' %}</li>
-          <li>{% link 'documentation/built-in-helpers/', 'Built-in Helpers' %}</li>
-          <li>{% link 'documentation/custom-helpers/', 'Custom Helpers' %}</li>
-        </ul>
-      </section>
-
-      <section>
-        <h4>Configuration</h4>
-        <ul>
-          <li>{% link 'documentation/config-options/', 'Options' %}</li>
-          <li>{% link 'documentation/global-variables/', 'Globals' %}</li>
-          <li>{% link 'documentation/page-sources/', 'Sources' %}</li>
-          <li>{% link 'documentation/config-helpers/', 'Helpers' %}</li>
-          <li>{% link 'documentation/command-line-flags/', 'Command-line Flags' %}</li>
-        </ul>
-      </section>
-
-      <section>
-        <h4>Organizing Pages</h4>
-        <ul>
-          <li>{% link 'documentation/collections/', 'Collections' %}</li>
-          <li>{% link 'documentation/groups/', 'Groups' %}</li>
-        </ul>
-      </section>
+      {% for group in documentation.groups %}
+        <section>
+          <h4>{{ group.name }}</h4>
+          <ul>
+            {% for page in group.pages %}
+            <li>{% link page.url, page.title %}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endfor %}
     </nav>
-    </aside>
+  </aside>
 
-    <article class="column-18">
-      <h1>{{title}}</h1>
-      {% block content %}{% endblock %}
-    </article>
-  </div>
+  <article class="column-18">
+    <h1>{{title}}</h1>
+    {% block content %}{% endblock %}
+  </article>
+</div>
 {% endblock %}

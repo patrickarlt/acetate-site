@@ -1,5 +1,6 @@
 ---
 title: Using with Gulp
+topic: Tools & Plugins
 ---
 
 There is no Gulp plugin for Acetate and none is needed. Just use Acetate's existing API.
