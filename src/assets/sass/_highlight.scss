@@ -1,20 +1,11 @@
-/*
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 
-    Name:       Base16 Ocean Light
-    Author:     Chris Kempson (http://chriskempson.com)
-
-    highlight.js v8.0 template by Jan T. Sott (https://github.com/idleberg/base16-highlight.js)
-    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-
-*/
-
-/* Ocean Comment */
-.hljs-comment,
-.hljs-title {
-  color: #65737e;
+/* Tomorrow Comment */
+.hljs-comment {
+  color: #8e908c;
 }
 
-/* Ocean Red */
+/* Tomorrow Red */
 .hljs-variable,
 .hljs-attribute,
 .hljs-tag,
@@ -27,41 +18,44 @@
 .css .hljs-id,
 .css .hljs-class,
 .css .hljs-pseudo {
-  color: #bf616a;
+  color: #c82829;
 }
 
-/* Ocean Orange */
+/* Tomorrow Orange */
 .hljs-number,
 .hljs-preprocessor,
+.hljs-pragma,
 .hljs-built_in,
 .hljs-literal,
 .hljs-params,
 .hljs-constant {
-  color: #d08770;
+  color: #f5871f;
 }
 
-/* Ocean Yellow */
+/* Tomorrow Yellow */
 .ruby .hljs-class .hljs-title,
-.css .hljs-rules .hljs-attribute {
-  color: #ebcb8b;
+.css .hljs-rule .hljs-attribute {
+  color: #eab700;
 }
 
-/* Ocean Green */
+/* Tomorrow Green */
 .hljs-string,
 .hljs-value,
 .hljs-inheritance,
 .hljs-header,
+.hljs-name,
 .ruby .hljs-symbol,
 .xml .hljs-cdata {
-  color: #a3be8c;
+  color: #718c00;
 }
 
-/* Ocean Aqua */
+/* Tomorrow Aqua */
+.hljs-title,
 .css .hljs-hexcolor {
-  color: #96b5b4;
+  color: #3e999f;
 }
 
-/* Ocean Blue */
+/* Tomorrow Blue */
 .hljs-function,
 .python .hljs-decorator,
 .python .hljs-title,
@@ -70,20 +64,22 @@
 .perl .hljs-sub,
 .javascript .hljs-title,
 .coffeescript .hljs-title {
-  color: #8fa1b3;
+  color: #4271ae;
 }
 
-/* Ocean Purple */
+/* Tomorrow Purple */
 .hljs-keyword,
 .javascript .hljs-function {
-  color: #b48ead;
+  color: #8959a8;
 }
 
 .hljs {
   display: block;
-  background: #eff1f5;
-  color: #4f5b66;
+  overflow-x: auto;
+  background: white;
+  color: #4d4d4c;
   padding: 0.5em;
+  -webkit-text-size-adjust: none;
 }
 
 .coffeescript .javascript,

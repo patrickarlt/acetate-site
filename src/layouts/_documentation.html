@@ -6,12 +6,12 @@
     <nav class="topic-list">
       {% link 'documentation/', 'Getting Started' %}
 
-      {% for group in documentation.groups %}
+      {% for group in queries.documentation %}
         <section>
           <h4>{{ group.name }}</h4>
           <ul>
             {% for page in group.pages %}
-            <li>{% link page.url, page.title %}</li>
+            <li>{% link page.url, (page.navTitle or page.title) %}</li>
             {% endfor %}
           </ul>
         </section>
@@ -22,6 +22,10 @@
   <article class="column-18">
     <h1>{{title}}</h1>
     {% block content %}{% endblock %}
+    <hr>
+    <p class="small">
+      <a href="https://github.com/patrickarlt/acetate-site/edit/master/src/{{ src }}">Edit this Page on GitHub</a>
+    </p>
   </article>
 </div>
 {% endblock %}

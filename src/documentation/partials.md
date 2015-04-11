@@ -1,6 +1,7 @@
 ---
 title: Partials
 topic: Pages
+order: 30
 ---
 
 

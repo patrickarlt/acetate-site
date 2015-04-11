@@ -1,6 +1,7 @@
 ---
 title: Page Metadata
 topic: Pages
+order: 40
 ---
 
 All pages can declare local metadata (as YAML) to use in their tempaltes and configure their behavior. Anything you declare in the frontmatter is accessable as a variable in your templates.
@@ -54,10 +55,9 @@ You can set or change these metadata keys to change basic Acetate behavior.
 | Key | Description | Documentation |
 | --- | ----------- | ------------- |
 | `layout` | The layout this page uses to render. | [Page Layouts](/documentation/layouts/)
-| `groups` | Groups that this page should load. | [Grouping Pages](/documentation/groups/)
-| `collections` | Collections that this page should load. | [Page Collections](/documentation/collections/)
-| `data` | Data that this page should load. | [External Data](/documentation/external-data)
-| `ignore` | Should the page be ignored during the build? | `false` by default.
+| `queries` | Stores results of queries performed against pages. | [Queries](/documentation/queries/)
+| `data` | Data sources local to this page. | [External Data](/documentation/external-data)
+| `ignore` | If `true` the page will not be built.
 
 ### Read Only
 

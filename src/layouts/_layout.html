@@ -15,7 +15,7 @@
 <body>
   <nav class="navigation {{navStyle}}">
     <div class="grid-container">
-      <a href="/">Acetate</a>
+      <a href="/" class="{% if url == './' %}is-active{% endif %}">Acetate</a>
       <div class="right">
         <a href="/documentation/" class="{% if url == 'documentation/' %}is-active{% endif %}">Getting Started</a>
         <a href="/documentation/" class="{% docPageClass url %}">Documentation</a>

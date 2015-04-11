@@ -249,8 +249,11 @@ code.filename {
 }
 
 .callout.note {
-  h5 {
-    text-align: left;
+  background: $darker-cream;
+  padding: 1rem;
+  h5, p {
+    @include leader(0);
+    @include trailer(0);
   }
 }
 

@@ -1,6 +1,7 @@
 ---
 title: Layouts
 topic: Pages
+order: 20
 ---
 
 Acetate wraps Nunjucks [template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in a simple layout system.

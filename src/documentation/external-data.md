@@ -3,7 +3,16 @@ title: External Data
 topic: Pages
 ---
 
-Acetate can include data from external JSON and YAML files or use load Node modules to query data dynamically at built time. To load data files place the `.json` `.yaml` `.yml` or `.js` files in your source folder. Then inside a data object provide a map of data files to local template variables.
+Acetate can include data from external JSON and YAML files or use load Node modules to query data dynamically at built time. To load data files place the `.json` `.yaml` `.yml` or `.js` files in your source folder. Then in your config file you can declare those files as data sources.
+
+<code class="filename">acetate.conf.js</code>
+```js
+acetate.data('projects', 'projects.json');
+acetate.data('people', 'people.yaml');
+acetate.data('status', 'status.js');
+```
+
+Registering data files in your configuration will make them accessible on any page. However if you only want to use a data file on one page (or a few) you can also declare the data files in your pages metadata.
 
 ```html
 title: Loading Data
@@ -17,9 +26,21 @@ data:
 <h1>I have data now!</h1>
 ```
 
-The above metadata would assign the `projects.json` file to the local varaible `projects` (the key in the object) so you can access it in your templates.
+## Using Data in your Templates
 
-## JSON
+Once you have defined your data sources you can access them in your pages under the `data` key.
+
+```html
+{% raw %}{{ data.projects }}
+{{ data.people }}
+{{ data.status }}{% endraw %}
+```
+
+## Data Types
+
+Acetate supports JSON, YAML and JavaScript modules. The rest of these examples will use define data sources locally on the page for clarity. 
+
+### JSON
 
 <code class="filename">src/company.json</code>
 
@@ -55,7 +76,7 @@ data:
 ```
 
 
-## YAML
+### YAML
 
 <code class="filename">src/company.yaml</code>
 
@@ -86,7 +107,7 @@ data:
 </ul>{% endraw %}
 ```
 
-## Dynamic Data
+### Dynamic Data
 
 You can also create Node modules that can query their data dynamically at build time. This is great for things that need to come from external sources like an API or a database but don't need to be always up to date.
 
@@ -97,10 +118,10 @@ To load in dynamic data create a `.js` file in your source folder. This file sho
 ```js
 var request = require('request');
 
-module.exports = function(callback, page){
+module.exports = function(callback){
     request({
       method: 'GET',
-      url: 'https://api.github.com/users/' + page.username + '/gists',
+      url: 'https://api.github.com/users/patrickarlt/gists',
       json: true,
       headers: {
         'User-Agent': 'request'
@@ -117,7 +138,6 @@ module.exports = function(callback, page){
 ---
 title: My Gists
 layout: _layout:main
-username: patrickarlt
 data:
     gists: gists.js
 ---

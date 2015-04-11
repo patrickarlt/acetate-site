@@ -1,6 +1,7 @@
 ---
-title: Built-in Page Helpers
+title: Built-in Helpers
 topic: Pages
+order: 50
 ---
 
 ## Page Variables

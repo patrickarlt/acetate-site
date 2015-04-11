@@ -25,8 +25,8 @@ html {
 body {
   font-family: $body-font;
   font-weight: 300;
-  font-size: 20px;
-  line-height: 1.5em;
+  font-size: $body-size;
+  line-height: $baseline;
   color: $gray;
 }
 
@@ -36,22 +36,22 @@ b, strong, em {
 
 code {
   font-family: $mono-font;
-  font-size: 1rem;
+  @include font-size(-3);
+  line-height: 1.5rem;
   padding: 0 .25em;
   margin: 0 .125em;
   background-color: $darker-cream;
   border: 1px solid $darker-cream;
-  border-radius: .3rem;
   display: inline-block;
 }
 
 pre {
-  @include font-size(-1);
-  padding: 1em;
+  padding: .75rem 1rem;
   border: 3px solid $darker-cream;
   background-color: $dark-cream;
-  border-radius: .3rem;
   code {
+    @include font-size(-4);
+    line-height: 1.5rem;
     padding: 0;
     border: none;
     background-color: transparent;
@@ -65,7 +65,7 @@ p {
 a {
   color: $blue;
   text-decoration: none;
-  border-bottom: 2px solid trasparent;
+  border-bottom: 2px solid $blue;
   &:hover, &:focus {
     color: $green;
     border-bottom: 2px solid $green;
@@ -136,8 +136,14 @@ img {
   height: auto;
 }
 
+hr {
+  border: none;
+  border-top: 2px solid $darker-cream;
+  margin: 2rem 0;
+}
+
 .small {
-  font-size: .95rem;
+  @include font-size(-2);
 }
 
 .text-center {

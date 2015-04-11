@@ -37,7 +37,6 @@ gulp.task('acetate:build', function () {
 | `port`      | `3000`         | Integer. The port on which the webserver will respond.
 | `host`      | `'localhost'`  | The hostname to server the website on.
 | `findPort`  | `true`         | If `port` is occupied by another process, find another port to use.
-| `open`      | `false`        | Open the served page in your default browser.
 | `clean`     | `false`        | Removes pages created by Acetate in the build directory before building.
 | `log`       | `'info'`       | Logging level to use. Should be one of `debug`,`verbose`,`info`,`success`,`warn`,`error`,`stack`,`silent`.
 
