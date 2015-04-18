@@ -32,6 +32,9 @@ gulp.task('acetate:build', function () {
 | Option      | Default        | Description |
 | ----------  | -------------- | ----------- |
 | `config`    | `undefined`    | The path to your configuration file.
+| `root`    | `process.cwd()`    | The root directory where you are working. This shoudl contain your `src` and `dest` folders.
+| `src`    | `src`    | The folder where pages are located in
+| `dest`    | `build`    | The folder where pages will be built.
 | `server`    | `false`        | Enable to built-in development server.
 | `watcher`   | `false`        | Enable wathcing and rebuilding files as they change.
 | `port`      | `3000`         | Integer. The port on which the webserver will respond.

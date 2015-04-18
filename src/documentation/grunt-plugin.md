@@ -41,6 +41,9 @@ grunt.initConfig({
 | ----------  | -------------- | ----------- |
 | `keepalive` | `false`        | Keep the server alive indefinitely. Note that if this option is enabled, any tasks specified after this task will *never run*.
 | `server`    | `false`        | Enable to built-in development server.
+| `root`    | `process.cwd()`    | The root directory where you are working. This shoudl contain your `src` and `dest` folders.
+| `src`    | `src`    | The folder where pages are located in
+| `dest`    | `build`    | The folder where pages will be built.
 | `watcher`   | `false`        | Enable wathcing and rebuilding files as they change.
 | `port`      | `3000`         | Integer. The port on which the webserver will respond.
 | `host`      | `'localhost'`  | The hostname to server the website on.

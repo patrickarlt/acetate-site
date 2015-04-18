@@ -6,6 +6,7 @@ topic: Pages
 Acetate can include data from external JSON and YAML files or use load Node modules to query data dynamically at built time. To load data files place the `.json` `.yaml` `.yml` or `.js` files in your source folder. Then in your config file you can declare those files as data sources.
 
 <code class="filename">acetate.conf.js</code>
+
 ```js
 acetate.data('projects', 'projects.json');
 acetate.data('people', 'people.yaml');
@@ -15,6 +16,7 @@ acetate.data('status', 'status.js');
 Registering data files in your configuration will make them accessible on any page. However if you only want to use a data file on one page (or a few) you can also declare the data files in your pages metadata.
 
 ```html
+---
 title: Loading Data
 layout: _layout:main
 data:
@@ -67,9 +69,9 @@ data:
     company: company.json
 ---
 {% raw %}
-<h1>{{company.name}} {{title}}</h1>
+<h1>{{data.company.name}} - {{title}}</h1>
 <ul>
-{% for employee in  company.employees %}
+{% for employee in data.company.employees %}
     <li>{{employee}} ({{age}})</li>
 {% endfor %}
 </ul>{% endraw %}
@@ -99,9 +101,9 @@ data:
     company: company.yaml
 ---
 {% raw %}
-<h1>{{company.name}} {{title}}</h1>
+<h1>{{data.company.name}} {{title}}</h1>
 <ul>
-{% for employee in  company.employees %}
+{% for employee in data.company.employees %}
     <li>{{employee}} ({{age}})</li>
 {% endfor %}
 </ul>{% endraw %}
@@ -142,9 +144,8 @@ data:
     gists: gists.js
 ---
 {% raw %}
-<h1>{{company.name}} {{title}}</h1>
 <ul>
-{% for gist in  gists %}
+{% for gist in data.gists %}
     <li><a href="{{gist.html_url">{{gist.description}}</a>)</li>
 {% endfor %}
 </ul>{% endraw %}

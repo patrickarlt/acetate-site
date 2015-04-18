@@ -27,12 +27,12 @@ Now that you have a layout you declare it in a page's frontmatter with the `layo
 <code class="filename">src/index.html</code>
 
 ```html
----
+{% raw %}---
 title: Using Layouts
 layout: _layout:page
 ---
 
-<h1>I'm using a layout!</h1>
+<h1>I'm using a layout!</h1>{% endraw %}
 ```
 
 You can also declare layouts for large amounts of pages in your config file with the `layout` helper.
@@ -65,10 +65,10 @@ To nest layouts use `extends` to declare the layout you would like to extend and
 <code class="filename">src/nested.html</code>
 
 ```html
----
+{% raw %}---
 title: Using Layouts
 layout: _nested:content
 ---
 
-<p>Look I'm using a nested layout!</p>
+<p>Look I'm using a nested layout!</p>{% endraw %}
 ```

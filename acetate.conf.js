@@ -7,7 +7,7 @@ module.exports = function (acetate) {
   acetate.source('CNAME');
   acetate.layout('CNAME', false);
 
-  acetate.helper('link', function(context, url, text){
+  acetate.helper('link', function (context, url, text) {
     var className = context.url === url ? 'is-active' : 'not-active';
     var template = '<a href="{{relativeUrl}}" class="{{className}}">{{text}}</a>';
     var relativeUrl = context.relativePath + url;
@@ -18,12 +18,12 @@ module.exports = function (acetate) {
     });
   });
 
-  acetate.helper('docPageClass', function(context, url){
+  acetate.helper('docPageClass', function (context, url) {
     var matcher = /documentation\/.+/;
     return (matcher.test(url)) ? 'is-active' : 'not-active';
   });
 
-  acetate.block('callout', function(context, body, type){
+  acetate.block('callout', function (context, body, type) {
     var template = '<div class="callout {{type | lower}}"><p><h5>{{type}}</h5>{{body}}</p></div>';
     return acetate.nunjucks.renderString(template, {
       type: type,
@@ -35,18 +35,13 @@ module.exports = function (acetate) {
     topic: 'Misc.'
   });
 
-  acetate.filter('log', function(value){
-    console.log(value);
-    return false;
-  });
-
-  acetate.query('documentation', 'documentation/*', function(pages){
-    return _(pages).groupBy('topic').map(function(pages, topic){
+  acetate.query('documentation', 'documentation/*', function (pages) {
+    return _(pages).groupBy('topic').map(function (pages, topic) {
       return {
         name: topic,
         pages: _.sortByOrder(pages, ['order'], [true])
       };
-    }).sortBy(function(group){
+    }).sortBy(function (group) {
       var order = ['Pages', 'Configuration', 'Tools & Plugins', 'Extensions', 'Misc.'];
       return order.indexOf(group.name);
     }).value();
