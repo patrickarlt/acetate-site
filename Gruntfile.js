@@ -4,13 +4,15 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     'acetate': {
-      build: {
+      options: {
         config: 'acetate.conf.js',
       },
+
+      build: {},
+
       watch: {
-        config: 'acetate.conf.js',
         options: {
-          watcher: true
+          watcher: true,
         }
       }
     },

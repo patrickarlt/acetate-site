@@ -6,24 +6,19 @@ topic: Tools & Plugins
 There is no Gulp plugin for Acetate and none is needed. Just use Acetate's existing API.
 
 ```js
-var gulp = require('gulp');
 var acetate = require('acetate');
-var path = require('path');
-var configFile = path.join(process.cwd(), 'acetate.conf.js');
+var gulp = require('gulp');
 
-gulp.task('acetate:watch', function () {
-  acetate({
-    config: configFile,
-    watcher: true,
+gulp.task('acetate:dev', function () {
+  acetate(
     server: true,
+    watcher: true,
     open: true
-  });
+  );
 });
 
 gulp.task('acetate:build', function () {
-  acetate({
-    config: configFile,
-  });
+  acetate();
 });
 ```
 
@@ -31,7 +26,7 @@ gulp.task('acetate:build', function () {
 
 | Option      | Default        | Description |
 | ----------  | -------------- | ----------- |
-| `config`    | `undefined`    | The path to your configuration file.
+| `config`    | `acetate.conf.js`    | The name of your configuration file.
 | `root`    | `process.cwd()`    | The root directory where you are working. This shoudl contain your `src` and `dest` folders.
 | `src`    | `src`    | The folder where pages are located in
 | `dest`    | `build`    | The folder where pages will be built.
@@ -40,8 +35,7 @@ gulp.task('acetate:build', function () {
 | `port`      | `3000`         | Integer. The port on which the webserver will respond.
 | `host`      | `'localhost'`  | The hostname to server the website on.
 | `findPort`  | `true`         | If `port` is occupied by another process, find another port to use.
-| `clean`     | `false`        | Removes pages created by Acetate in the build directory before building.
-| `log`       | `'info'`       | Logging level to use. Should be one of `debug`,`verbose`,`info`,`success`,`warn`,`error`,`stack`,`silent`.
+| `log`       | `'info'`       | Logging level to use. Should be one of `debug`, `verbose`, `info`, `success`, `warn`, `error`, `silent`.
 
 ### Example
 
