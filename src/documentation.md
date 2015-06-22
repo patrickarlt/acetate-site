@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Doc
 layout: layouts/_documentation:content
 ---
 

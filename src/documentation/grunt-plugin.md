@@ -33,9 +33,7 @@ grunt.initConfig({
     // with custom options
     watch: {
       options: {
-        watcher: true,
-        server: true,
-        open: true
+        mode: 'server'
       }
     }
   }
@@ -46,18 +44,15 @@ grunt.initConfig({
 
 | Option      | Default        | Description |
 | ----------  | -------------- | ----------- |
-| `config`    | `'acetate.conf.js'` | Name of your configuration file.
-| `keepalive` | `false`        | Keep the server alive indefinitely. Note that if this option is enabled, any tasks specified after this task will *never run*.
-| `server`    | `false`        | Enable to built-in development server.
+| `config`    | `'acetate.conf.js'`    | The name of your configuration file.
 | `root`    | `process.cwd()`    | The root directory where you are working. This shoudl contain your `src` and `dest` folders.
-| `src`    | `src`    | The folder where pages are located in
-| `dest`    | `build`    | The folder where pages will be built.
-| `watcher`   | `false`        | Enable wathcing and rebuilding files as they change.
-| `port`      | `3000`         | Integer. The port on which the webserver will respond.
+| `src`    | `'src'`    | The folder where pages are located in
+| `dest`    | `'build'`    | The folder where pages will be built.
+| `mode` | `build` | The task that Acetate will run. Should be one of `server`, `watch` or `build`.
+| `port`      | `8000`         | Integer. The port on which the webserver will respond.
 | `host`      | `'localhost'`  | The hostname to server the website on.
-| `findPort`  | `true`         | If `port` is occupied by another process, find another port to use.
-| `open`      | `false`        | Open the served page in your default browser.
 | `log`       | `'info'`       | Logging level to use. Should be one of `debug`, `verbose`, `info`, `success`, `warn`, `error`, `silent`.
+| `args` | `{}` | Any additonal arguments you want to be available under `acetate.args` in your config file.
 
 ### Example
 
