@@ -3,7 +3,7 @@ title: External Data
 topic: Pages
 ---
 
-Acetate can include data from external JSON and YAML files or use load Node modules to query data dynamically at built time. To load data files place the `.json` `.yaml` `.yml` or `.js` files in your source folder. Then in your config file you can declare those files as data sources.
+Acetate can include data from external JSON and YAML files or load Node modules to query data dynamically at build time. To load data files place the `.json` `.yaml` `.yml` or `.js` files in your source folder. Then in your config file you can declare those files as data sources.
 
 <code class="filename">acetate.conf.js</code>
 
@@ -13,7 +13,7 @@ acetate.data('people', 'people.yaml');
 acetate.data('status', 'status.js');
 ```
 
-Registering data files in your configuration will make them accessible on any page. However if you only want to use a data file on one page (or a few) you can also declare the data files in your pages metadata.
+Registering data files in your configuration will make them accessible on any page. However if you only want to use a data file on one page (or a few) you can also declare the data files in your page's metadata.
 
 ```html
 ---
@@ -40,7 +40,7 @@ Once you have defined your data sources you can access them in your pages under 
 
 ## Data Types
 
-Acetate supports JSON, YAML and JavaScript modules. The rest of these examples will use define data sources locally on the page for clarity. 
+Acetate supports JSON, YAML and JavaScript modules. The rest of these examples will define data sources locally on the page for clarity. 
 
 ### JSON
 
@@ -113,7 +113,7 @@ data:
 
 You can also create Node modules that can query their data dynamically at build time. This is great for things that need to come from external sources like an API or a database but don't need to be always up to date.
 
-To load in dynamic data create a `.js` file in your source folder. This file should export a single function that will be passed a `callback` function and the metadata for the page that is requesting the data. When you are done retriving your data pass it to the callback like `callback(error, data)`.
+To load in dynamic data create a `.js` file in your source folder. This file should export a single function that will be passed a `callback` function and the metadata for the page that is requesting the data. When you are done retrieving your data pass it to the callback like `callback(error, data)`.
 
 <code class="filename">src/gist.js</code>
 

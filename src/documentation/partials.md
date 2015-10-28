@@ -5,7 +5,7 @@ order: 30
 ---
 
 
-You can use build and include reusable templates accross multupile pages with Nunjucks `include` tag. Remember filenames that begin with `_` are not built so they are ideal for partials.
+You can build and include reusable templates across multiple pages with Nunjucks `include` tag. Remember filenames that begin with `_` are not built so they are ideal for partials.
 
 <code class="filename">src/_partial.html</code>
 
@@ -14,7 +14,7 @@ You can use build and include reusable templates accross multupile pages with Nu
 <meta name="description" content="{{description}}">{% endraw %}
 ```
 
-Now that we have defined a tempalte file we can inclucde it accross multupile pages with `{% raw %}{% include '_partial' %}{% endraw %}`. Like with layouts you dont have to include the file extension and the path is relative to your source folder.
+Now that we have defined a template file we can inclucde it across multiple pages with `{% raw %}{% include '_partial' %}{% endraw %}`. Like with layouts you don't have to include the file extension and the path is relative to your source folder.
 
 <code class="filename">src/contact.html</code>
 

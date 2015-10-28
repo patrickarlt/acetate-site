@@ -10,7 +10,7 @@ You can use any of these variables in your templates.
 
 | Variable | Description | Example |
 | --- | ----------- | ------------- |
-| `stats` | File statistics for this pages template. | [Node fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
+| `stats` | File statistics for this page's template. | [Node fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
 | `src` | Path to this file from the `acetate.src` folder | `'blog/posts/hello-world.md'`
 | `dest` | Output path for this file relative to the `acetate.dest` folder | `'blog/posts/hello-world/index.html'`
 | `url` | URL for this page. | `'blog/posts/hello-world/'`
