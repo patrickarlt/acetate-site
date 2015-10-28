@@ -88,7 +88,7 @@ Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/
 
 ### Helpers
 
-In addition to having access to having everything in the [Nunjucks templating language](https://mozilla.github.io/nunjucks/templating.html#include) you can also [access built in variables provided by Acetate](/documetation/built-in-helpers/) and [create custom helpers](/documentation/cusotm-helpers/) to use in your template.
+In addition to having access to having everything in the [Nunjucks templating language](https://mozilla.github.io/nunjucks/templating.html#include) you can also [access built in variables provided by Acetate](/documetation/built-in-helpers/) and [create custom helpers](/documentation/custom-helpers/) to use in your template.
 
 ### Filters
 
