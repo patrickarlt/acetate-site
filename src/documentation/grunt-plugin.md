@@ -23,12 +23,11 @@ grunt.initConfig({
     // global options
     options: {
       config: 'acetate.conf.js',
+      mode: 'build'
     },
 
     // with all default options
-    build: {
-    
-    },
+    build: {},
 
     // with custom options
     watch: {
