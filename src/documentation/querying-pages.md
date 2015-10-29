@@ -30,10 +30,12 @@ module.exports = function (acetate) {
 };
 ```
 
-Above we query all of the pages inside the documentation folder and then sort and group them with lodash (optional). Whatever you returned from your function is now available as `{{queries.documentation}}`. To iterate over this query, you could use something like this in your Nunjucks template:
+Above we query all of the pages inside the documentation folder and then sort and group them with lodash (optional). Whatever you returned from your function is now available as `{% raw %}{{queries.documentation}}{% endraw %}`. To iterate over this query, you could use something like this in your Nunjucks template:
 
 ```
+{% raw %}
 {% for group in queries.documentation %}
   <h4>{{ group.name }}</h4>
 {% endfor %}
+{% endraw %}
 ```
