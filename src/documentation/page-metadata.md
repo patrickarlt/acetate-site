@@ -58,6 +58,7 @@ You can set or change these metadata keys to change basic Acetate behavior.
 | `queries` | Stores results of queries performed against pages. | [Queries](/documentation/queries/)
 | `data` | Data sources local to this page. | [External Data](/documentation/external-data)
 | `ignore` | If `true` the page will not be built.
+| `prettyUrl` | Set to false to disable directory indexes | [Pretty URLs](/documentation/introduction-to-pages/#pretty-urls)
 
 ### Read Only
 
