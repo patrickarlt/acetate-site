@@ -19,4 +19,10 @@ acetate.source('sitemap.xml');
 acetate.source('robots.txt');
 ```
 
-This would make `src/CNAME`, `src/sitemap.xml`, and `src/robots.txt` pages that you can then template with Nunjucks and use all all of Acetate's feature inside.
+This would make `src/CNAME`, `src/sitemap.xml`, and `src/robots.txt` pages that you can then template with Nunjucks and use all of Acetate's features inside.
+
+### Pretty URLs
+
+By default, Acetate will create directory indexes for all pages. For example, the file `about.html` will be built as `about/index.html`. This enables you to use URLs in your project like `/about/`, which is more user-friendly as it doesn't force the user to remember an extension.
+
+If you need to disable pretty URLs for a particular page you can set `prettyUrl` to `false` in the page's [front-matter](./page-metadata/). You can also set this with the [metadata helper](./altering-metadata/) in the [configuration file](./introduction-to-configuration/).
