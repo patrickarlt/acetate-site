@@ -6,7 +6,7 @@ order: 60
 
 ## Custom Filters
 
-You can congisure custom filters for Nunjucks with the `acetate.filter` helper. The first parameter is the name of your filter. The second is the function that will process the variable and return it.
+You can configure custom filters for Nunjucks with the `acetate.filter` helper. The first parameter is the name of your filter. The second is the function that will process the variable and return it.
 
 ```js
 acetate.filter('prettyJSON', function(str){

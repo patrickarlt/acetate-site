@@ -46,7 +46,7 @@ If you need to pass custom configuration options with using the Acetate CLI you 
 $ acetate server --open --env=dev
 ```
 
-Acetate will seperate your custom options from the Acetate options and make then available in your config file under `acetate.args`.
+Acetate will separate your custom options from the Acetate options and make then available in your config file under `acetate.args`.
 
 <code class="filename">acetate.conf.js</code>
 

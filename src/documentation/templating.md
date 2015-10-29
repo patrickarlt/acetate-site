@@ -12,7 +12,7 @@ In general you should refer to the [Nunjucks templating documentation](https://m
 
 ### Printing Variables
 
-You can print a variable in Nunjucks by wrapping it in double curly braces like `{% raw %}{{ variable}}{% endraw %}`.
+You can print a variable in Nunjucks by wrapping it in double curly braces like `{% raw %}{{ variable }}{% endraw %}`.
 
 Unlike other templating libraries Nunjucks does not autoescape content by default. But you can use the `escape` filter`{% raw %}{{ variable | escape }}{% endraw %}`.
 
@@ -84,14 +84,14 @@ You can use either the [Acetate layout system](/documentation/layouts) or [Nunju
 
 ### Partials
 
-Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/templating.html#include) to create partials that can be used across multupile pages. To learn how to use partials in Acetate refer to the [partials documentation](/documentation/partials/). 
+Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/templating.html#include) to create partials that can be used across multiple pages. To learn how to use partials in Acetate refer to the [partials documentation](/documentation/partials/). 
 
 ### Helpers
 
-In addition to having access to having everything in the [Nunjucks templating language](https://mozilla.github.io/nunjucks/templating.html#include) you can also [access built in variables provided by Acetate](/documetation/built-in-helpers/) and [create custom helpers](/documentation/custom-helpers/) to use in your template.
+In addition to having access to everything in the [Nunjucks templating language](https://mozilla.github.io/nunjucks/templating.html#include) you can also [access built in variables provided by Acetate](/documetation/built-in-helpers/) and [create custom helpers](/documentation/custom-helpers/) to use in your template.
 
 ### Filters
 
-To use a filter add it after a variable seperated by a `|` character {% raw %}{{variable | filter}}{% endraw %}.
+To use a filter add it after a variable seperated by a `|` character `{% raw %}{{variable | filter}}{% endraw %}`.
 
 You can use any of the [Nunjucks filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters) like `sort`, `first`, and `trim` and you can [define your own filters](/documentation/cusotm-helpers/).

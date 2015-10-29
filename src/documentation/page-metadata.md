@@ -4,7 +4,7 @@ topic: Pages
 order: 40
 ---
 
-All pages can declare local metadata (as YAML) to use in their tempaltes and configure their behavior. Anything you declare in the frontmatter is accessable as a variable in your templates.
+All pages can declare local metadata (as YAML) to use in their templates and configure their behavior. Anything you declare in the frontmatter is accessable as a variable in your templates.
 
 ```
 ---
@@ -46,7 +46,7 @@ theme: blue
 
 ## Reserved Metadata Keys
 
-Acetate reserves the following keys for its own internal use or for you to use in your templates. You should use any of these key names for any other purpose.
+Acetate reserves the following keys for its own internal use or for you to use in your templates. You should not use any of these key names for any other purpose.
 
 ### Editable
 
@@ -65,9 +65,9 @@ These metadata keys are available for you to use in your templates but are read 
 
 | Key | Description | Documentation |
 | --- | ----------- | ------------- |
-| `stats` | File statistics for this pages template. | [Built-in Helpers](/documentation/built-in-helpers)
-| `src` | Path to this file from the `acetate.src` folder | [Built-in Helpers](/documentation/built-in-helpers)
-| `dest` | Output path for this file relative to the `acetate.dest` folder | [Built-in Helpers](/documentation/built-in-helpers)
+| `stats` | File statistics for this page's template. | [Built-in Helpers](/documentation/built-in-helpers)
+| `src` | Path to this file from the `acetate.src` folder. | [Built-in Helpers](/documentation/built-in-helpers)
+| `dest` | Output path for this file relative to the `acetate.dest` folder. | [Built-in Helpers](/documentation/built-in-helpers)
 | `url` | URL for this page. | [Built-in Helpers](/documentation/built-in-helpers)
 | `fullpath` | Full path to this template from root. | [Built-in Helpers](/documentation/built-in-helpers)
 | `relativePath` | Relative path back to root from this page. | [Built-in Helpers](/documentation/built-in-helpers)

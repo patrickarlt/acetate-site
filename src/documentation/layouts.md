@@ -60,7 +60,7 @@ The first argument is a glob that will be used to match pages. The second is the
 {% endblock %}{% endraw %}
 ```
 
-To nest layouts use `extends` to declare the layout you would like to extend and then declare content for one or more of its blocks. Then declare a new block (with a differnet name) that other templates can extend.
+To nest layouts use `extends` to declare the layout you would like to extend and then declare content for one or more of its blocks. Then declare a new block (with a different name) that other templates can extend.
 
 <code class="filename">src/nested.html</code>
 
