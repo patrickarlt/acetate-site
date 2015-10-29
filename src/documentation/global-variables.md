@@ -17,4 +17,4 @@ module.exports = function (acetate) {
 };
 ```
 
-Now in any of your pages you can retreive that string under whatever name you saved it as, in this case `{{email}}`.
+Now in any of your pages you can retreive that string under whatever name you saved it as, in this case {% raw %}`{{email}}`{% endraw %}.
