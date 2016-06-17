@@ -7,6 +7,8 @@ For now refer to the [Acetate Sample](https://github.com/patrickarlt/acetate-sam
 
 You can also look at the [source for this site](https://github.com/patrickarlt/acetate-site) which is written in Acetate and built using Grunt.
 
-## Project Structure
+## Basic Project Structure
+
+## Starter Projects
 
 ## Whats Next?

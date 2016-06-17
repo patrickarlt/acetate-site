@@ -8,17 +8,18 @@
   {% endif %}
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link href='http://fonts.googleapis.com/css?family=Unica+One|Karla:400,400italic,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Unica+One|Karla:400,400italic,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
   <nav class="navigation {{navStyle}}">
     <div class="grid-container">
-      <a href="./" class="{% if url == './' %}is-active{% endif %}">Acetate</a>
+      {% link '/', 'Acetate', requireExactMatch=true %}
+
       <div class="right">
-        <a href="/getting-started/" class="{% if url == 'getting-started/' %}is-active{% endif %}">Getting Started</a>
-        <a href="/documentation/" class="{% docPageClass url %}">Documentation</a>
-        <a href="http://github.com/patrickarlt/acetate/">GitHub</a>
+        {% link '/getting-started/', 'Getting Started' %}
+        {% link '/documentation/', 'Documentation' %}
+        {% link 'http://github.com/patrickarlt/acetate/', 'GitHub' %}
       </div>
     </div>
   </nav>

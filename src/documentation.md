@@ -1,15 +1,14 @@
 ---
-title: Doc
+title: Documentation
 layout: layouts/_documentation:content
 ---
 
-## Where to start?
+## Getting Started
 
-## Important concepts
+## Understanding Acetate
 
-### Pages
+### Load, Transform, Render
 
-### Configuration
+### Modes
 
-### Extensions
-
+### CLI, Grunt, Gulp

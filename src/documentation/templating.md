@@ -6,7 +6,7 @@ order: 10
 
 Acetate uses the [Nunjucks](https://mozilla.github.io/nunjucks/) templating language for all its templating. Nunjucks is powerful and has all the features you would want to build a complex website.
 
-## Basic Nunjucks 
+## Basic Nunjucks
 
 In general you should refer to the [Nunjucks templating documentation](https://mozilla.github.io/nunjucks/templating.html) but a quick introduction to the basics will be helpful.
 
@@ -26,7 +26,7 @@ You can use Nunjucks `{% raw %}{% for %}{% endraw %}` tag to iterate over Arrays
 
 ```html
 {% raw %}---
-items: 
+items:
   - title: Foo
     id: 1
   - title: Bar
@@ -84,7 +84,7 @@ You can use either the [Acetate layout system](/documentation/layouts) or [Nunju
 
 ### Partials
 
-Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/templating.html#include) to create partials that can be used across multupile pages. To learn how to use partials in Acetate refer to the [partials documentation](/documentation/partials/). 
+Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/templating.html#include) to create partials that can be used across multupile pages. To learn how to use partials in Acetate refer to the [partials documentation](/documentation/partials/).
 
 ### Helpers
 

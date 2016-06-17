@@ -42,7 +42,7 @@ You can use the `helper` function in your config file to define custom helpers y
 <code class="filename">acetate.conf.js</code>
 
 ```js
-{% raw %}// create a link helper that will also add a .active 
+{% raw %}// create a link helper that will also add a .active
 // class to the linked page is also teh current page
 acetate.helper('link', function(context, url, text){
   // context is the current local variables on the page
@@ -80,7 +80,7 @@ This example also shows how you can use Nunjucks to handle templating inside you
 
 {% callout 'Note' %}
 You must pass at least 1 parameter to your helper tags in your templates. Otherwise Nunjucks will throw a template error.
-{% endcallout%}
+{% endcallout %}
 
 ## Block Helpers
 
@@ -105,7 +105,7 @@ Now that your helper is registered you can use it in your templates.
 ```html
 {% raw %}{% callout 'Note' %}
 This is a custom callout!
-{% calloutend%}{% endraw %}
+{% endcallout %}{% endraw %}
 ```
 
 <code class="filename">dist/blog/index.html</code>
