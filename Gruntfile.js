@@ -13,8 +13,6 @@ module.exports = function(grunt) {
       server: {
         options: {
           mode: 'server',
-          open: true,
-          https: true
         }
       }
     },

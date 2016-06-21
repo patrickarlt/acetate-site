@@ -8,20 +8,6 @@ module.exports = function (acetate) {
   acetate.load('CNAME');
   acetate.layout('CNAME', false);
 
-  acetate.helper('docPageClass', function (context, url) {
-    var matcher = /documentation\/.+/;
-    return (matcher.test(url)) ? 'is-active' : 'not-active';
-  });
-
-  acetate.block('callout', function (context, body, type) {
-    return acetate.renderer.nunjucks.renderString(`
-      <div class="callout {{type | lower}}">
-        <h5>{{type}}</h5>
-        <p>{{body}}</p>
-      </div>
-    `, {type, body});
-  });
-
   acetate.metadata('documentation/**/*', {
     topic: 'Misc.'
   });
@@ -31,7 +17,8 @@ module.exports = function (acetate) {
       topic: page.topic,
       order: page.order,
       url: page.url,
-      title: page.title
+      title: page.title,
+      navTitle: page.navTitle
     };
   }, function (nav, page, index, navItems) {
     if (nav) {
@@ -44,7 +31,7 @@ module.exports = function (acetate) {
         pages: _.orderBy(pages, ['order'], [true])
       };
     }).sortBy(function (group) {
-      var order = ['Pages', 'Configuration', 'Tools & Plugins', 'Extensions', 'Misc.'];
+      var order = ['Basic', 'Advanced', 'Integrations', 'Modes', 'Misc.'];
       return order.indexOf(group.name);
     }).value();
   }, false);

@@ -1,7 +1,7 @@
 ---
 title: Templating
-topic: Pages
-order: 10
+topic: Basic
+order: 35
 ---
 
 Acetate uses the [Nunjucks](https://mozilla.github.io/nunjucks/) templating language for all its templating. Nunjucks is powerful and has all the features you would want to build a complex website.
@@ -80,11 +80,11 @@ You can use most JavaScript literals like Strings, Numbers, Arrays, Objects, Reg
 
 ### Layouts
 
-You can use either the [Acetate layout system](/documentation/layouts) or [Nunjucks template inheritence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance)  to create reuseable layouts to wrap your content.
+You can use either the [Acetate layout system](/documentation/layouts-and-partials) or [Nunjucks template inheritence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance)  to create reuseable layouts to wrap your content.
 
 ### Partials
 
-Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/templating.html#include) to create partials that can be used across multupile pages. To learn how to use partials in Acetate refer to the [partials documentation](/documentation/partials/).
+Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/templating.html#include) to create partials that can be used across multupile pages. To learn how to use partials in Acetate refer to the [partials documentation](/documentation/layouts-and-partials/).
 
 ### Helpers
 
@@ -94,4 +94,4 @@ In addition to having access to having everything in the [Nunjucks templating la
 
 To use a filter add it after a variable seperated by a `|` character {% raw %}{{variable | filter}}{% endraw %}.
 
-You can use any of the [Nunjucks filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters) like `sort`, `first`, and `trim` and you can [define your own filters](/documentation/cusotm-helpers/).
+You can use any of the [Nunjucks filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters) like `sort`, `first`, and `trim` and you can [define your own filters](/documentation/custom-helpers/).

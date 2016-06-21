@@ -1,10 +1,10 @@
 ---
 title: Page Metadata
-topic: Pages
-order: 40
+topic: Basic
+order: 60
 ---
 
-All pages can declare local metadata (as YAML) to use in their tempaltes and configure their behavior. Anything you declare in the frontmatter is accessable as a variable in your templates.
+All pages can declare local metadata (as YAML) to use in their tempaltes and configure their behavior. Anything you declare in the metadata is accessable as a variable in your templates.
 
 ```
 ---
@@ -13,7 +13,7 @@ layout: _layout:master
 theme: blue
 ---
 
-<h1>My Page</h1>
+<h1>This page has some metadata</h1>
 ```
 
 ## Applying Metadata in Bulk
@@ -46,7 +46,7 @@ theme: blue
 
 ## Reserved Metadata Keys
 
-Acetate reserves the following keys for its own internal use or for you to use in your templates. You should use any of these key names for any other purpose.
+Acetate reserves the following keys for its own internal use or for you to use in your templates. You should not use any of these key names for any other purpose.
 
 ### Editable
 
@@ -55,9 +55,7 @@ You can set or change these metadata keys to change basic Acetate behavior.
 | Key | Description | Documentation |
 | --- | ----------- | ------------- |
 | `layout` | The layout this page uses to render. | [Page Layouts](/documentation/layouts/)
-| `queries` | Stores results of queries performed against pages. | [Queries](/documentation/queries/)
-| `data` | Data sources local to this page. | [External Data](/documentation/external-data)
-| `ignore` | If `true` the page will not be built.
+| `ignore` | If `true` the page will not be built. | [Creating Pages](/documentation/creating-pages)
 
 ### Read Only
 
@@ -71,3 +69,5 @@ These metadata keys are available for you to use in your templates but are read 
 | `url` | URL for this page. | [Built-in Helpers](/documentation/built-in-helpers)
 | `fullpath` | Full path to this template from root. | [Built-in Helpers](/documentation/built-in-helpers)
 | `relativePath` | Relative path back to root from this page. | [Built-in Helpers](/documentation/built-in-helpers)
+| `queries` | Stores results of queries performed against pages. | [Queries](/documentation/querying-pages/)
+| `data` | Data sources. | [External Data](/documentation/external-data)

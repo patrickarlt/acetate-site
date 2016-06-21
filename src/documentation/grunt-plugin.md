@@ -1,6 +1,8 @@
 ---
-title: Grunt Plugin
-topic: Tools & Plugins
+title: Using with Grunt
+navTitle: Grunt
+topic: Integrations
+order: 20
 ---
 
 For easy use with Grunt install the `grunt-acetate` plugin with this command:
@@ -15,19 +17,19 @@ Then load it into your Gruntfile:
 grunt.loadNpmTasks('grunt-acetate');
 ```
 
-In your project's Gruntfile, add a section named acetate to the data object passed into `grunt.initConfig()`:
+In your project's Gruntfile, add a section named `acetate` to the config object passed into `grunt.initConfig()`:
 
 ```
 grunt.initConfig({
   acetate: {
     // global options
     options: {
-      config: 'acetate.conf.js',
+      config: 'acetate.config.js',
     },
 
     // with all default options
     build: {
-    
+      mode: 'build'
     },
 
     // with custom options
@@ -44,6 +46,7 @@ grunt.initConfig({
 
 | Option      | Default        | Description |
 | ----------  | -------------- | ----------- |
+| `mode`    | *REQUIRED* |  The Acetate mode to run in. Either `'build'`, `'watcher'`, or `'server`.
 | `config`    | `'acetate.conf.js'`    | The name of your configuration file.
 | `root`    | `process.cwd()`    | The root directory where you are working. This shoudl contain your `src` and `dest` folders.
 | `src`    | `'src'`    | The folder where pages are located in
@@ -52,7 +55,8 @@ grunt.initConfig({
 | `port`      | `8000`         | Integer. The port on which the webserver will respond.
 | `host`      | `'localhost'`  | The hostname to server the website on.
 | `log`       | `'info'`       | Logging level to use. Should be one of `debug`, `verbose`, `info`, `success`, `warn`, `error`, `silent`.
-| `args` | `{}` | Any additonal arguments you want to be available under `acetate.args` in your config file.
+| `args` | `{}` | Any additional arguments you want to be available under `acetate.args` in your config file.
+| `server` | `{}` | Any [additional Browsersync options](https://www.browsersync.io/docs/options/) to use when running in `server` mode.
 
 ### Example
 

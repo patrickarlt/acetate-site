@@ -1,22 +1,30 @@
 ---
 title: Using with Gulp
-topic: Tools & Plugins
+navTitle: Gulp
+topic: Integrations
+order: 30
 ---
 
-There is no Gulp plugin for Acetate and none is needed. Just use Acetate's existing API.
+There is no Gulp plugin for Acetate and none is needed. You can just use Acetate's existing APIs!
 
 ```js
-var acetate = require('acetate');
 var gulp = require('gulp');
+var Acetate = require('acetate');
+var server = require('acetate/lib/modes/server');
+var builder = require('acetate/lib/modes/builder');
 
-gulp.task('acetate:dev', function () {
-  acetate({
-    mode: 'server'
+function acetate () {
+  return new Acetate({
+    outDir: 'dist'
   });
+}
+
+gulp.task('acetate:server', function (callback) {
+  server(acetate());
 });
 
 gulp.task('acetate:build', function () {
-  acetate();
+  return builder(acetate());
 });
 ```
 
@@ -24,14 +32,11 @@ gulp.task('acetate:build', function () {
 
 | Option      | Default        | Description |
 | ----------  | -------------- | ----------- |
-| `config`    | `'acetate.conf.js'`    | The name of your configuration file.
-| `root`    | `process.cwd()`    | The root directory where you are working. This shoudl contain your `src` and `dest` folders.
-| `src`    | `'src'`    | The folder where pages are located in
-| `dest`    | `'build'`    | The folder where pages will be built.
-| `mode` | `build` | The task that Acetate will run. Should be one of `server`, `watch` or `build`.
-| `port`      | `8000`         | Integer. The port on which the webserver will respond.
-| `host`      | `'localhost'`  | The hostname to server the website on.
-| `log`       | `'info'`       | Logging level to use. Should be one of `debug`, `verbose`, `info`, `success`, `warn`, `error`, `silent`.
+| `config`    | `'acetate.config.js'`    | The name of your configuration file.
+| `root`    | `process.cwd()`    | The root directory where you are working.
+| `sourceDir`    | `'src'`    | The folder where pages are located in
+| `outDir`    | `'build'`    | The folder where pages will be built.
+| `log`       | `'info'`       | Logging level to use. Should be one of `debug`, `info`, `error`, or `silent`.
 | `args` | `{}` | Any additonal arguments you want to be available under `acetate.args` in your config file.
 
 ### Example

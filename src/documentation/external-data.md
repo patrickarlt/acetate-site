@@ -1,31 +1,21 @@
 ---
 title: External Data
-topic: Pages
+topic: Advanced
+order: 30
 ---
 
-Acetate can include data from external JSON and YAML files or use load Node modules to query data dynamically at built time. To load data files place the `.json` `.yaml` `.yml` or `.js` files in your source folder. Then in your config file you can declare those files as data sources.
+Acetate can include data from external JSON and YAML files or you can define function to load data. To load data files place `.json`, `.yaml` or `.yml` files in your source folder. Then in your config file you can declare those files as data sources.
 
-<code class="filename">acetate.conf.js</code>
+<code class="filename">acetate.config.js</code>
 
 ```js
 acetate.data('projects', 'projects.json');
 acetate.data('people', 'people.yaml');
-acetate.data('status', 'status.js');
-```
-
-Registering data files in your configuration will make them accessible on any page. However if you only want to use a data file on one page (or a few) you can also declare the data files in your pages metadata.
-
-```html
----
-title: Loading Data
-layout: _layout:main
-data:
-    projects: projects.json
-    people: people.yaml
-    status: status.js
----
-
-<h1>I have data now!</h1>
+acetate.data('status', function (callback) {
+  // get data, via api request ect...
+  // callback with an error if something goes wrong
+  callback(error, data);
+});
 ```
 
 ## Using Data in your Templates
@@ -40,9 +30,15 @@ Once you have defined your data sources you can access them in your pages under 
 
 ## Data Types
 
-Acetate supports JSON, YAML and JavaScript modules. The rest of these examples will use define data sources locally on the page for clarity. 
+Acetate supports JSON and YAML. The rest of these examples will use define data sources locally on the page for clarity.
 
 ### JSON
+
+<code class="filename">acetate.config.js</code>
+
+```js
+acetate.data('company', 'company.json');
+```
 
 <code class="filename">src/company.json</code>
 
@@ -64,10 +60,8 @@ Acetate supports JSON, YAML and JavaScript modules. The rest of these examples w
 ```html
 ---
 title: Employee Directory
-layout: _layout:main
-data:
-    company: company.json
 ---
+
 {% raw %}
 <h1>{{data.company.name}} - {{title}}</h1>
 <ul>
@@ -79,6 +73,12 @@ data:
 
 
 ### YAML
+
+<code class="filename">acetate.config.js</code>
+
+```js
+acetate.data('company', 'company.yaml');
+```
 
 <code class="filename">src/company.yaml</code>
 
@@ -96,10 +96,8 @@ employees:
 ```html
 ---
 title: Employee Directory
-layout: _layout:main
-data:
-    company: company.yaml
 ---
+
 {% raw %}
 <h1>{{data.company.name}} {{title}}</h1>
 <ul>
@@ -111,16 +109,15 @@ data:
 
 ### Dynamic Data
 
-You can also create Node modules that can query their data dynamically at build time. This is great for things that need to come from external sources like an API or a database but don't need to be always up to date.
+You can also use function that query data dynamically at build time. This is great for things that need to come from external sources like an API or a database but don't need to be always up to date.
 
-To load in dynamic data create a `.js` file in your source folder. This file should export a single function that will be passed a `callback` function and the metadata for the page that is requesting the data. When you are done retriving your data pass it to the callback like `callback(error, data)`.
-
-<code class="filename">src/gist.js</code>
+<code class="filename">acetate.config.js</code>
 
 ```js
 var request = require('request');
 
-module.exports = function(callback){
+module.exports = function (acetate) {
+  acetate.data('gists', function(callback){
     request({
       method: 'GET',
       url: 'https://api.github.com/users/patrickarlt/gists',
@@ -129,8 +126,9 @@ module.exports = function(callback){
         'User-Agent': 'request'
       }
     }, function(err, resp, body){
-        callback(err, body);
+      callback(err, body);
     });
+  }
 }
 ```
 
@@ -139,10 +137,8 @@ module.exports = function(callback){
 ```html
 ---
 title: My Gists
-layout: _layout:main
-data:
-    gists: gists.js
 ---
+
 {% raw %}
 <ul>
 {% for gist in data.gists %}
