@@ -13,57 +13,29 @@ module.exports = function (acetate) {
     topic: 'Misc.'
   });
 
-  acetate.generate(function (pages, createPage, callback){
-    request({
-      url: 'https://api.github.com/repos/patrickarlt/acetate/contents/CHANGELOG.md',
-      headers: {
-        "Accept": "application/vnd.github.v3+json",
-        "User-Agent": "Acetate Web Site Build"
-      },
-      json: true
-    }, function (error, response, body) {
-      const contents = Buffer.from(body.content, 'base64').toString();
-
-      const template = `
-        {% markdown %}
-          {% raw %}
-            ${contents.replace('# Changelog', '')}
-          {% endraw %}
-        {% endmarkdown %}
-      `;
-
-      const changelogPage = createPage('changelog.html', template, {
-        title: "Changelog",
-        layout: "layouts/_documentation:content"
-      });
-
-      callback(error, [
-        changelogPage
-      ]);
-    });
-  });
-
   acetate.query('documentation', 'documentation/*',function (page) {
     return {
       topic: page.topic,
       order: page.order,
       url: page.url,
-      title: page.title,
-      navTitle: page.navTitle
+      title: page.navTitle || page.title
     };
-  }, function (nav, page, index, navItems) {
-    if (nav) {
-      return nav;
+  }, function (nav, page) {
+    let section = _.find(nav, {name: page.topic})
+
+    if (section) {
+      section.pages.push(page);
+      section.pages = _.sortBy(section.pages, 'order');
+    } else {
+      nav.push({
+        name: page.topic,
+        pages: [ page ]
+      });
     }
 
-    return _(navItems).groupBy('topic').map(function (pages, topic) {
-      return {
-        name: topic,
-        pages: _.orderBy(pages, ['order'], [true])
-      };
-    }).sortBy(function (group) {
+    return _.sortBy(nav, function (group) {
       var order = ['Basic', 'Advanced', 'Integrations', 'Modes', 'Misc.'];
       return order.indexOf(group.name);
-    }).value();
-  }, false);
+    });
+  }, []);
 };

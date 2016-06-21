@@ -6,14 +6,13 @@
     <nav class="topic-list">
       {% link '/getting-started/', 'Getting Started' %}
       {% link '/understanding-acetate/', 'Understanding Acetate' %}
-      {% link '/changelog/', 'Changelog' %}
 
       {% for group in queries.documentation %}
         <section>
           <h4>{{ group.name }}</h4>
           <ul>
             {% for page in group.pages %}
-            <li>{% link page.url, (page.navTitle or page.title) %}</li>
+            <li>{% link page.url, page.title %}</li>
             {% endfor %}
           </ul>
         </section>
