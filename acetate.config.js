@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var request = require('request');
 
 module.exports = function (acetate) {
   acetate.load('**/*.+(html|md)')
@@ -10,6 +11,31 @@ module.exports = function (acetate) {
 
   acetate.metadata('documentation/**/*', {
     topic: 'Misc.'
+  });
+
+  acetate.generate(function (pages, createPage, callback){
+    request({
+      url: 'https://api.github.com/repos/patrickarlt/acetate/contents/CHANGELOG.md',
+      headers: {
+        "Accept": "application/vnd.github.v3+json",
+        "User-Agent": "Acetate Web Site Build"
+      },
+      json: true
+    }, function (error, response, body) {
+      const contents = Buffer.from(body.content, 'base64').toString();
+      callback(error, [
+        createPage('changelog.html', `
+          {% markdown %}
+            {% raw %}
+              ${contents.replace('# Changelog', '')}
+            {% endraw %}
+          {% endmarkdown %}
+        `, {
+          title: "Changelog",
+          layout: "layouts/_documentation:content"
+        })
+      ]);
+    });
   });
 
   acetate.query('documentation', 'documentation/*',function (page) {
