@@ -23,17 +23,22 @@ module.exports = function (acetate) {
       json: true
     }, function (error, response, body) {
       const contents = Buffer.from(body.content, 'base64').toString();
+
+      const template = `
+        {% markdown %}
+          {% raw %}
+            ${contents.replace('# Changelog', '')}
+          {% endraw %}
+        {% endmarkdown %}
+      `;
+
+      const changelogPage = createPage('changelog.html', template, {
+        title: "Changelog",
+        layout: "layouts/_documentation:content"
+      });
+
       callback(error, [
-        createPage('changelog.html', `
-          {% markdown %}
-            {% raw %}
-              ${contents.replace('# Changelog', '')}
-            {% endraw %}
-          {% endmarkdown %}
-        `, {
-          title: "Changelog",
-          layout: "layouts/_documentation:content"
-        })
+        changelogPage
       ]);
     });
   });
