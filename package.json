@@ -15,7 +15,7 @@
     "node": "~6.0.0"
   },
   "author": "Patrick Arlt",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "acetate": "~1.0.0",
     "grunt": "~1.0.0",
