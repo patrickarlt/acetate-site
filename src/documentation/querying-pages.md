@@ -52,9 +52,9 @@ module.exports = function (acetate) {
         });
       }
 
-      return _.sortBy(nav, function (section) {
+      return _.sortBy(nav, function (group) {
         var order = ['Basic', 'Advanced', 'Integrations', 'Modes', 'Misc.'];
-        return order.indexOf(section.name);
+        return order.indexOf(group.name);
       });
     },
 
