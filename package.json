@@ -14,7 +14,7 @@
   "engines": {
     "node": "~6.0.0"
   },
-  "author": "Patrick Arlt",
+  "author": "Patrick Arlt <patrick.arlt@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "acetate": "~1.0.0",
