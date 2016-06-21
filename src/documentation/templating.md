@@ -12,7 +12,7 @@ In general you should refer to the [Nunjucks templating documentation](https://m
 
 ### Printing Variables
 
-You can print a variable in Nunjucks by wrapping it in double curly braces like `{% raw %}{{ variable}}{% endraw %}`.
+You can print a variable in Nunjucks by wrapping it in double curly braces like `{% raw %}{{ variable }}{% endraw %}`.
 
 Unlike other templating libraries Nunjucks does not autoescape content by default. But you can use the `escape` filter`{% raw %}{{ variable | escape }}{% endraw %}`.
 
@@ -88,10 +88,10 @@ Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/
 
 ### Helpers
 
-In addition to having access to having everything in the [Nunjucks templating language](https://mozilla.github.io/nunjucks/templating.html#include) you can also [access built in variables provided by Acetate](/documetation/built-in-helpers/) and [create custom helpers](/documentation/custom-helpers/) to use in your template.
+In addition to having access to everything in the [Nunjucks templating language](https://mozilla.github.io/nunjucks/templating.html#include) you can also [access built in variables provided by Acetate](/documetation/built-in-helpers/) and [create custom helpers](/documentation/custom-helpers/) to use in your template.
 
 ### Filters
 
-To use a filter add it after a variable seperated by a `|` character {% raw %}{{variable | filter}}{% endraw %}.
+To use a filter add it after a variable seperated by a `|` character `{% raw %}{{variable | filter}}{% endraw %}`.
 
 You can use any of the [Nunjucks filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters) like `sort`, `first`, and `trim` and you can [define your own filters](/documentation/custom-helpers/).

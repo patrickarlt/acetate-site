@@ -55,7 +55,10 @@ You can set or change these metadata keys to change basic Acetate behavior.
 | Key | Description | Documentation |
 | --- | ----------- | ------------- |
 | `layout` | The layout this page uses to render. | [Page Layouts](/documentation/layouts/)
+
 | `ignore` | If `true` the page will not be built. | [Creating Pages](/documentation/creating-pages)
+| `dest` | Output path for this file relative to the `acetate.dest` folder. | [Built-in Helpers](/documentation/built-in-helpers)
+| `url` | URL for this page. | [Built-in Helpers](/documentation/built-in-helpers)
 
 ### Read Only
 
@@ -63,10 +66,8 @@ These metadata keys are available for you to use in your templates but are read 
 
 | Key | Description | Documentation |
 | --- | ----------- | ------------- |
-| `stats` | File statistics for this pages template. | [Built-in Helpers](/documentation/built-in-helpers)
-| `src` | Path to this file from the `acetate.src` folder | [Built-in Helpers](/documentation/built-in-helpers)
-| `dest` | Output path for this file relative to the `acetate.dest` folder | [Built-in Helpers](/documentation/built-in-helpers)
-| `url` | URL for this page. | [Built-in Helpers](/documentation/built-in-helpers)
+| `stats` | File statistics for this page's template. | [Built-in Helpers](/documentation/built-in-helpers)
+| `src` | Path to this file from the `acetate.src` folder. | [Built-in Helpers](/documentation/built-in-helpers)
 | `fullpath` | Full path to this template from root. | [Built-in Helpers](/documentation/built-in-helpers)
 | `relativePath` | Relative path back to root from this page. | [Built-in Helpers](/documentation/built-in-helpers)
 | `queries` | Stores results of queries performed against pages. | [Queries](/documentation/querying-pages/)
