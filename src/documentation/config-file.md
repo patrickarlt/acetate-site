@@ -4,7 +4,7 @@ topic: Basic
 order: 20
 ---
 
-Acetate is configured using a file called `acetate.config.js`. The configuration file should just be a Node module that will be called with the instance of acetate. Here is a minimal example of an acetate configuration file that simply sets the default layout, and adds a few files that are usually ignored by acetate:
+Acetate is configured using a file called `acetate.config.js`. The configuration file should just be a Node module that will be called with the instance of Acetate. Here is a minimal example of an Acetate configuration file that simply sets the default layout and adds a few files that are usually ignored by Acetate:
 
 <code class="filename">acetate.config.js</code>
 

@@ -39,10 +39,10 @@ server.reload()
 // use server.stop() to stop the server
 ```
 
-In general you can pass any [Browsersync options](https://www.browsersync.io/docs/options/) to the server mode as a second argument. However Acetate will modify any options in the following way:
+In general, you can pass any [Browsersync options](https://www.browsersync.io/docs/options/) to the server mode as a second argument. However, Acetate will modify any options in the following way:
 
 * `logPrefix` will always be Acetate
 * `logLevel` will always match Acetates log level
 * `server` or `server.baseDir` will always be Acetate's output folder or include Acetate's output folder
-* `files` will always include all files in Acetates output folder
+* `files` will always include all files in Acetate's output folder
 * `snippetOptions.async` will always be `true`
