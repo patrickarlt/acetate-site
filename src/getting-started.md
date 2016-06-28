@@ -35,9 +35,9 @@ $ acetate server
 ```
 
 
-## Whats Next?
+## What's Next?
 
-Take a look at [Understanding Acetate](/understanding-acetate/) for a more in depth look at how Acetate works. Then your are ready to start building your project or dive into some of the sample sites.
+Take a look at [Understanding Acetate](/understanding-acetate/) for a more in depth look at how Acetate works. Then you are ready to start building your project or dive into some of the sample sites.
 
 ## Starter Projects
 

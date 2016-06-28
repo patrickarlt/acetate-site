@@ -14,7 +14,7 @@ module.exports = function (acetate) {
 };
 ```
 
-Once page are loaded they can be processed, manipulated and ultimatly built to disk or served by Acetate's build in server.
+Once page are loaded they can be processed, manipulated and ultimately built to disk or served by Acetate's build in server.
 
 ## Ignoring Pages
 

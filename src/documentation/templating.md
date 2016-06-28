@@ -60,7 +60,7 @@ dogs:
 
 ### Conditionals
 
-You can use Nunjucks `{% raw %}{% if %}{% endraw %}` tag to create conditional statements.
+You can use Nunjucks' `{% raw %}{% if %}{% endraw %}` tag to create conditional statements.
 
 <code class="filename">src/conditionals.html</code>
 
@@ -84,7 +84,7 @@ You can use either the [Acetate layout system](/documentation/layouts-and-partia
 
 ### Partials
 
-Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/templating.html#include) to create partials that can be used across multupile pages. To learn how to use partials in Acetate refer to the [partials documentation](/documentation/layouts-and-partials/).
+Acetate leverages the [Nunjucks include tag](https://mozilla.github.io/nunjucks/templating.html#include) to create partials that can be used across multiple pages. To learn how to use partials in Acetate refer to the [partials documentation](/documentation/layouts-and-partials/).
 
 ### Helpers
 
@@ -92,6 +92,6 @@ In addition to having access to everything in the [Nunjucks templating language]
 
 ### Filters
 
-To use a filter add it after a variable seperated by a `|` character `{% raw %}{{variable | filter}}{% endraw %}`.
+To use a filter add it after a variable separated by a `|` character `{% raw %}{{variable | filter}}{% endraw %}`.
 
 You can use any of the [Nunjucks filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters) like `sort`, `first`, and `trim` and you can [define your own filters](/documentation/custom-helpers/).

@@ -24,7 +24,7 @@ To create a layout template just make a new page with a `block`. Content will be
 </html>{% endraw %}
 ```
 
-Now that you have a layout you declare it in a page's metadata with the `layout` key. Format the value like `path/to/layout:block_name_in_layout`. You can optionally omit the file extension, Acetate will search for files ending in `.html` and `.md`.
+Now that you have a layout you declare it in a page's metadata with the `layout` key. Format the value like `path/to/layout:block_name_in_layout`. You can optionally omit the file extension; Acetate will search for files ending in `.html` and `.md`.
 
 <code class="filename">src/index.html</code>
 
@@ -89,13 +89,13 @@ layout: _nested:content
 
 ## Using Nunjucks Template Inheritance
 
-You do not have to use Acetates layout system for all your pages. If you want to declare more then one block in a template and fill in that content from page just use [Nunjucks template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) as normal and set the `layout` metadata key to `false`.
+You do not have to use Acetate's layout system for all your pages. If you want to declare more then one block in a template and fill in that content from page just use [Nunjucks template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) as normal and set the `layout` metadata key to `false`.
 
 Markdown pages cannot use template inheritance. They must use the `layout` key in their metadata.
 
 ## Partials
 
-You can use build and include reusable templates accross multupile pages with Nunjucks `include` tag. Remember filenames that begin with `_` are not built so they are ideal for partials.
+You can use build and include reusable templates across multiple pages with Nunjucks `include` tag. Remember filenames that begin with `_` are not built so they are ideal for partials.
 
 <code class="filename">src/_partial.html</code>
 
@@ -104,7 +104,7 @@ You can use build and include reusable templates accross multupile pages with Nu
 <meta name="description" content="{{description}}">{% endraw %}
 ```
 
-Now that we have defined a tempalte file we can inclucde it accross multupile pages with `{% raw %}{% include '_partial' %}{% endraw %}`. Like with layouts you dont have to include the file extension and the path is relative to your source folder.
+Now that we have defined a template file we can include it across multiple pages with `{% raw %}{% include '_partial' %}{% endraw %}`. As with layouts, you don't have to include the file extension and the path is relative to your source folder.
 
 <code class="filename">src/contact.html</code>
 
@@ -146,4 +146,4 @@ description: Learn a little more about us.
 
 ## Macros and Imports
 
-Acetate also allows you to use [Nunjucks import](https://mozilla.github.io/nunjucks/templating.html#import) in templates. Just remember the path will be relative to your source directory.
+Acetate also allows you to use [Nunjucks import](https://mozilla.github.io/nunjucks/templating.html#import) in templates. Remember, the path will be relative to your source directory.

@@ -18,5 +18,5 @@ To get a basic understanding of how Acetate works read [understanding Acetate](/
 
 ## Examples
 
-* [acetate.io](https://github.com/patrickarlt/acetate-site) - The Aceate website built with Grunt
+* [acetate.io](https://github.com/patrickarlt/acetate-site) - The Acetate website built with Grunt
 * [patrickarlt.com](https://github.com/patrickarlt/patrickarlt.github.io) - Personal website built with Gulp

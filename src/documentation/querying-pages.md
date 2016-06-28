@@ -4,17 +4,17 @@ topic: Advanced
 order: 20
 ---
 
-Queries allow to to select and save groups of pages or calculate values based on your pages metadata.
+Queries allow to to select and save groups of pages or calculate values based on your pages' metadata.
 
 The `acetate.query` function takes 5 arguments.
 
 1. `name` - the unique `name` of this query. You will use this to access query results in your template.
-2. `filter` - filter all pages by either a glob pattern like `**/*` or a function that recived a `page` as an argument and returns a boolean. The function syntax is idential to [`Array.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+2. `filter` - filter all pages by either a glob pattern like `**/*` or a function that received a `page` as an argument and returns a boolean. The function syntax is identical to [`Array.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 3. `map` - Iterate over results from the filter and create a new array of results. The function is identical to [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 4. `reduce` - Iterate over the array of results from the `map` function and return a new value. This funciton is eqivilant to the callback in [`Array.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-5. `inital` - The inital value to pass into the reduce function.
+5. `initial` - The initial value to pass into the reduce function.
 
-### Example: Dymanically Generated Navigation
+### Example: Dynamically Generated Navigation
 
 ```js
 module.exports = function (acetate) {
@@ -66,7 +66,7 @@ module.exports = function (acetate) {
 };
 ```
 
-Once you have saved your query you can access the final value under `queries.name` in your templates.
+Once you have saved your query, you can access the final value under `queries.name` in your templates.
 
 ```html
 {% raw %}<nav>
