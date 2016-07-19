@@ -41,4 +41,4 @@ gulp.task('acetate:build', function () {
 
 ### Example
 
-[patrickarlt.com](http://patrickarlt.com) is built with Gulp and Acetate. Take a look at it's [gulpfile](https://github.com/patrickarlt/patrickarlt.github.io/blob/source/tasks/acetate.js).
+[patrickarlt.com](http://patrickarlt.com) is built with Gulp and Acetate. Take a look at its [gulpfile](https://github.com/patrickarlt/patrickarlt.github.io/blob/source/tasks/acetate.js).

@@ -4,7 +4,7 @@ topic: Basic
 order: 60
 ---
 
-All pages can declare local metadata (as YAML) to use in their tempaltes and configure their behavior. Anything you declare in the metadata is accessable as a variable in your templates.
+All pages can declare local metadata (as YAML) to use in their templates and configure their behavior. Anything you declare in the metadata is accessible as a variable in your templates.
 
 ```
 ---
@@ -28,11 +28,11 @@ acetate.metadata('blog/**/*', {
 });
 ```
 
-Local Metadata declared on the page is always kept. So if a page aleady had `author` defined locally this would not override it.
+Local Metadata declared on the page is always kept. So if a page already had `author` defined locally this would not override it.
 
 ## Using Metadata in Templates
 
-Values in the metadata are passed directly to the local template context. See [templating](/documentation/templating) to learn the basics fo the [Nunjucks](https://mozilla.github.io/nunjucks/) templating language.
+Values in the metadata are passed directly to the local template context. See [templating](/documentation/templating) to learn the basics of the [Nunjucks](https://mozilla.github.io/nunjucks/) templating language.
 
 ```
 ---
@@ -62,7 +62,7 @@ You can set or change these metadata keys to change basic Acetate behavior.
 
 ### Read Only
 
-These metadata keys are available for you to use in your templates but are read only can cannot be changed.
+These metadata keys are available for you to use in your templates but are read only and cannot be changed.
 
 | Key | Description | Documentation |
 | --- | ----------- | ------------- |

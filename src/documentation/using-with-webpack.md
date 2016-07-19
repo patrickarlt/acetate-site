@@ -1,5 +1,5 @@
 ---
-title: Using with webpack
+title: Using with Webpack
 navTitle: Webpack
 topic: Integrations
 order: 40

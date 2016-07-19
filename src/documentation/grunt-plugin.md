@@ -60,4 +60,4 @@ grunt.initConfig({
 
 ### Example
 
-The Acetate website is built with Grunt. Take a look at it's [Gruntfile](https://github.com/patrickarlt/acetate-site/blob/master/Gruntfile.js).
+The Acetate website is built with Grunt. Take a look at its [Gruntfile](https://github.com/patrickarlt/acetate-site/blob/master/Gruntfile.js).
