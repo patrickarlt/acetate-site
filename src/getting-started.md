@@ -22,7 +22,7 @@ Clone the Acetate sample project and `cd` into it:
 $ git clone https://github.com/patrickarlt/acetate-sample.git && cd ./acetate-sample
 ```
 
-Intall the dependencies with NPM:
+Install the dependencies with NPM:
 
 ```bash
 $ npm install
