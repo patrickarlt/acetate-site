@@ -11,7 +11,7 @@ The `acetate.query` function takes 5 arguments.
 1. `name` - the unique `name` of this query. You will use this to access query results in your template.
 2. `filter` - filter all pages by either a glob pattern like `**/*` or a function that received a `page` as an argument and returns a boolean. The function syntax is identical to [`Array.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 3. `map` - Iterate over results from the filter and create a new array of results. The function is identical to [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-4. `reduce` - Iterate over the array of results from the `map` function and return a new value. This funciton is eqivilant to the callback in [`Array.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+4. `reduce` - Iterate over the array of results from the `map` function and return a new value. This function is equivalent to the callback in [`Array.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 5. `initial` - The initial value to pass into the reduce function.
 
 ### Example: Dynamically Generated Navigation
