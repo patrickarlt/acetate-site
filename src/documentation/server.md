@@ -18,7 +18,7 @@ Fast startup and rendering times, even for large sites.
 var Acetate = require('acetate');
 var watch = require('acetate/lib/modes/watcher');
 
-var aceate = new Acetate({
+var acetate = new Acetate({
   // options
 });
 
