@@ -4,7 +4,7 @@ topic: Advanced
 order: 30
 ---
 
-Acetate can include data from external JSON and YAML files or you can define function to load data. To load data files place, `.json`, `.yaml` or `.yml` files in your source folder. In your config file you can then declare those files as data sources.
+Acetate can include data from external JSON and YAML files or you can define a function to load data. To load data files place, `.json`, `.yaml` or `.yml` files in your source folder. In your config file you can then declare those files as data sources.
 
 <code class="filename">acetate.config.js</code>
 
@@ -109,7 +109,7 @@ title: Employee Directory
 
 ### Dynamic Data
 
-You can also use functions that query data dynamically at build time. This is great for things that need to come from external sources like an API or a database but don't need to be always up to date.
+You can also use functions that query data dynamically at build time. This is great for content that comes from external sources like an API or a database but don't need to be always up to date.
 
 <code class="filename">acetate.config.js</code>
 

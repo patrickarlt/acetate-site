@@ -5,13 +5,13 @@ layout: layouts/_documentation:content
 
 ## Configure, Load, Transform, Render
 
-Acetate sites divide the build process into 4 separate phases called Configure, Load, Transform and Render. Each of these phases runs one after the other although many processes within each phase happen asynchronously.
+Acetate sites divide the build process into 4 separate phases called Configure, Load, Transform and Render. Each of these phases runs in sequence although many processes within each phase happen asynchronously.
 
 Refer to the [config file documentation](/documentation/config-file) for more information about which phase a method is part of.
 
 ### The Configure Phase
 
-This is the first phase that starts when you initially run Acetate. Your configuration file is loaded and tasks are queued for the remaining 3 phases. After your configuration file is evaluated, Acetate will setup its own built-in helpers.
+This is the first phase when you initially run Acetate. Your configuration file is loaded and tasks are queued for the remaining 3 phases. After your configuration file is evaluated, Acetate will setup its own built-in helpers.
 
 ### The Load Phase
 
@@ -30,7 +30,7 @@ When running Acetate as a server or when watching file for changes Acetate will 
 
 ### The Transform Phase
 
-After pages are loaded Acetate can now manipulate the pages with other configuration directives like `acetate.metadata`, `acetate.layout` and `acetate.transform`. Transformations can be sync or async, but each transformation is applied one after the other.
+After pages are loaded Acetate can now manipulate them with other configuration directives like `acetate.metadata`, `acetate.layout` and `acetate.transform`. Transformations can be sync or async, but each transformation is applied one after the other.
 
 This makes understanding which transformation is being applied very simple. For example:
 
@@ -61,14 +61,14 @@ module.exports = function (acetate) {
 
 ### The Render Phase
 
-After Acetate has transformed all the pages in the site, pages are ready for rendering. Rendering a page first runs any [prerender functions](/documentation/prerender-functions/)P that apply to the page.
+After Acetate has transformed all the pages in the site, they are ready for rendering. Rendering a page first runs any [prerender functions](/documentation/prerender-functions/)P that apply to the page.
 
-[Prerender functions](/documentation/prerender-functions/) are ideal for pages that require expensive async operations before the page gets rendered. Prerendering functions are only run before the individual page is rendered, rather then as a part of the transformation phase which is run before *any* page is rendered.
+[Prerender functions](/documentation/prerender-functions/) are ideal for pages that require expensive async operations before the page is rendered. Prerendering functions are only run before the individual page is rendered, rather then as a part of the transformation phase which is run before *any* page is rendered.
 
 ## Modes
 
-Acetate ships with 3 default implementations for how it can be used to create a website as part of a larger build process. Usage of these modes is mostly handled by other tools but you might find it necessary to use them as part of a custom implementation.
+Acetate ships with 3 default implementations to create a website as part of a larger build process. Usage of these modes is mostly handled by other tools but you can also use them as part of a custom implementation.
 
 * [Builder](/documentation/builder/) - Builds the site to the output folder.
 * [Watcher](/documentation/watcher/) - Build the site then watch for changes and rebuild.
-* [Server](/documentation/server/) - Fully featured development server.
+* [Server](/documentation/server/) - Full featured development server.

@@ -29,7 +29,7 @@ Refer to the [Nunjucks filter documentation](https://mozilla.github.io/nunjucks/
 
 ## Helper Functions
 
-You can use the `helper` function in your config file to define custom helpers you can use in your templates. `helper` takes 3 parameters, a tag name which you will use in your templates, a handler function and a default set of options. The handler function will be passed the page context (all the variables on the page) and then any arguments you pass from the template.
+You can use the `helper` function in your configuration file to define custom helpers you can use in your templates. `helper` takes 3 parameters, a tag name which you will use in your templates, a handler function and a default set of options. The handler function will be passed the page context (all the variables on the page) and then any arguments you pass from the template.
 
 <code class="filename">acetate.conf.js</code>
 

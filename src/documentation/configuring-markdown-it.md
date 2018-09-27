@@ -4,7 +4,7 @@ topic: Advanced
 order: 100
 ---
 
-You can access the internal instance of [MarkdownIt](https://github.com/MoOx/markdown-it-toc-and-anchor) at `acetate.renderer.markdown` in your configuration file. This means you can easily use MarkdownIt plugins](https://www.npmjs.com/package/markdown-it-toc-and-anchor) by simply registering them in your configuration file.
+You can access the internal instance of [MarkdownIt](https://github.com/markdown-it/markdown-it) at `acetate.renderer.markdown` in your configuration file. This means you can easily use MarkdownIt plugins](https://www.npmjs.com/package/markdown-it) by simply registering them in your configuration file.
 
 <code class="filename">acetate.config.js</code>
 
@@ -16,7 +16,7 @@ module.exports = function (acetate) {
 }
 ```
 
-You can also replace the MarkdownIt instance entirely by making a new instance and assigning it to `acetate.renderer.markdown`.
+You can also replace the MarkdownIt instance entirely by making a new one and assigning it to `acetate.renderer.markdown`.
 
 <code class="filename">acetate.config.js</code>
 

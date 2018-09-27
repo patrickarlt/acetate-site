@@ -5,7 +5,7 @@ layout: layouts/_documentation:content
 
 ## Basic Project Structure
 
-Acetate sites have 3 common components need to get started:
+Acetate sites have 3 common components:
 
 1. A folder containing HTML and Markdown pages. This is generally called `src`.
 2. A `acetate.config.js` file that defines basic project configuration.
@@ -22,7 +22,7 @@ Clone the Acetate sample project and `cd` into it:
 $ git clone https://github.com/patrickarlt/acetate-sample.git && cd ./acetate-sample
 ```
 
-Intall the dependencies with NPM:
+Intall the dependencies with npm:
 
 ```bash
 $ npm install
@@ -37,7 +37,7 @@ $ acetate server
 
 ## What's Next?
 
-Take a look at [Understanding Acetate](/understanding-acetate/) for a more in depth look at how Acetate works. Then you are ready to start building your project or dive into some of the sample sites.
+Take a look at [Understanding Acetate](/understanding-acetate/) for a more in depth look at how Acetate works. Then you'll be ready to start building your project or dive into some of the sample sites.
 
 ## Starter Projects
 
@@ -46,5 +46,5 @@ Take a look at [Understanding Acetate](/understanding-acetate/) for a more in de
 
 ## Examples
 
-* [acetate.io](https://github.com/patrickarlt/acetate-site) - The Aceate website built with Grunt
+* [acetate.io](https://github.com/patrickarlt/acetate-site) - The Acetate website built with Grunt
 * [patrickarlt.com](https://github.com/patrickarlt/patrickarlt.github.io) - Personal website built with Gulp

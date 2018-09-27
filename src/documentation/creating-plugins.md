@@ -4,7 +4,7 @@ topic: Advanced
 order: 60
 ---
 
-Acetate has support for distributing code via NPM as a plugin. For an example of a simple plugin you can look at the source code for [`acetate-asset-revisions`](https://github.com/patrickarlt/acetate-asset-revisions/blob/master/index.js)
+Acetate supports distributing code via npm as a plugin. For an example of a simple plugin you can look at the source code for [`acetate-asset-revisions`](https://github.com/patrickarlt/acetate-asset-revisions/blob/master/index.js)
 
 <code class="filename">acetate.config.js</code>
 
@@ -18,7 +18,7 @@ module.exports = function(acetate){
 };
 ```
 
-To use a plugin simply pass a a function to `acetate.use`. That function will get the `acetate` object as its first argument and can call additional helpers. For example
+To use a plugin simply pass a function to `acetate.use`. That function will get the `acetate` object as its first argument and can call additional helpers. For example
 
 <code class="filename">my-plugin.js</code>
 

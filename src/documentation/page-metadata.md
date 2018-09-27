@@ -28,7 +28,7 @@ acetate.metadata('blog/**/*', {
 });
 ```
 
-Local Metadata declared on the page is always kept. So if a page already had `author` defined locally this would not override it.
+Local Metadata declared on the page always takes precedence. So if a page already had `author` defined locally, this would not override it.
 
 ## Using Metadata in Templates
 
@@ -62,7 +62,7 @@ You can set or change these metadata keys to change basic Acetate behavior.
 
 ### Read Only
 
-These metadata keys are available for you to use in your templates but are read only and cannot be changed.
+These metadata keys are available for you to use in your templates but are read-only and cannot be changed.
 
 | Key | Description | Documentation |
 | --- | ----------- | ------------- |

@@ -4,8 +4,7 @@ topic: Modes
 order: 30
 ---
 
-
-The build mode simply builds all files to the output directory. The builder will not build any pages that have their `ignore` metadata key set to true.
+The build mode builds all files to the output directory. The builder will not build any pages that have an `ignore` metadata key set to true.
 
 *Module:* `acetate/lib/modes/builder`;
 
@@ -14,7 +13,7 @@ var Acetate = require('acetate');
 var builder = require('acetate/lib/modes/builder');
 
 var aceate = new Acetate({
-  // options
+  // ignore: true
 });
 
 builder(acetate).then(function () {

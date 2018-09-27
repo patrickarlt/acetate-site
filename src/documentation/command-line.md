@@ -4,7 +4,7 @@ topic: Integrations
 order: 10
 ---
 
-You can install a command line with npm:
+You can install Acetate's command line tool from npm:
 
 ```bash
 npm install -g acetate-cli

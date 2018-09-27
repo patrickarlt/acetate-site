@@ -5,7 +5,7 @@ layout: layouts/_documentation:content
 
 ## Getting Started
 
-For a quick guide to getting started with Acetate check out the [getting started guide](/getting-started/).
+For a quick guide to get started with Acetate check out the [getting started guide](/getting-started/).
 
 ## Understanding Acetate
 

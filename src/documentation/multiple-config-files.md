@@ -4,7 +4,7 @@ topic: Advanced
 order: 50
 ---
 
-As your Acetate installation grows in complexity you can reduce complexity by seperating out your configuration into multupile files with the `acetate.require` helper.
+As your Acetate installation grows in complexity you can simplify by separating your configuration into multupile files with the `acetate.require` helper.
 
 <code class="filename">acetate.config.js</code>
 
@@ -22,7 +22,7 @@ module.exports = function (acetate) {
 }
 ```
 
-You can also require additional configurations directly from NPM.
+You can also require additional configurations directly from npm.
 
 ```js
 module.exports = function (acetate) {

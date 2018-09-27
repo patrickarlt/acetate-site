@@ -4,7 +4,7 @@ topic: Advanced
 order: 20
 ---
 
-Queries allow to to select and save groups of pages or calculate values based on your pages' metadata.
+Queries allow selecting and saving groups of pages or calculating values based on your pages' metadata.
 
 The `acetate.query` function takes 5 arguments.
 

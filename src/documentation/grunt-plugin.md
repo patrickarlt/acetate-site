@@ -5,7 +5,7 @@ topic: Integrations
 order: 20
 ---
 
-For easy use with Grunt install the `grunt-acetate` plugin with this command:
+For use with Grunt install the `grunt-acetate` plugin with this command:
 
 ```bash
 npm install grunt-acetate --save-dev

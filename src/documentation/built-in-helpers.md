@@ -6,11 +6,11 @@ order: 50
 
 ## Page Variables
 
-Acetate provides the following variables you can use any of these variables in your templates.
+Acetate provides the following variables to use in your templates.
 
 | Variable | Description | Example |
 | --- | ----------- | ------------- |
-| `stats` | File statistics for this pages template. | [Node fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) Will be `false` if this page was not generated from a template.
+| `stats` | File statistics for this page's template. | [Node fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) Will be `false` if this page was not generated from a template.
 | `src` | Path to this file from the source folder | `'blog/posts/hello-world.md'`
 | `dest` | Output path for this file relative to the output folder | `'blog/posts/hello-world/index.html'`
 | `url` | URL for this page. | `'blog/posts/hello-world/'`
@@ -32,7 +32,7 @@ Acetate provides the following variables you can use any of these variables in y
 
 Acetate's `{% raw %}{% link %}{% endraw %}` helper has a number of useful features to speed up development.
 
-* Automatically resolve relative links relative to the current page.
+* Automatically resolve links relative to the current page.
 * Automatically add an `is_active` class when the link is active.
 
 ```html
@@ -60,7 +60,7 @@ Acetate's `{% raw %}{% link %}{% endraw %}` helper has a number of useful featur
 
 ## Highlight Helper
 
-Acetate provides a `highlight` helper that will use [highlight.js](https://highlightjs.org/) to syntax highlight blocks of code.
+Acetate provides a `highlight` helper that use's [highlight.js](https://highlightjs.org/) to syntax highlight blocks of code.
 
 ```html
 {% raw %}{% highlight 'js'%}
@@ -69,7 +69,7 @@ alert(message);
 {% endhighlight %}{% endraw %}
 ```
 
-You can also omit the language hint to auto detect the language or pass `text` or `plain` to disable highlighting.
+You can omit the language hint to auto detect the language or pass `text` or `plain` to disable highlighting.
 
 ```html
 {% raw %}{% highlight %}

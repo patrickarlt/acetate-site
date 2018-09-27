@@ -4,9 +4,9 @@ topic: Advanced
 order: 70
 ---
 
-Acetate has the capability to dynamically generate pages, you might find this useful if you need to create pages based on other pages, such as a index blog posts) or pages based on data, such as a page showing your popular GitHub projects.
+Acetate has the capability to dynamically generate pages. This is useful if you need to create pages based on other pages, such as a index blog posts or pages based on data, such as a page that displays your popular GitHub projects.
 
-`acetate.generator` is a configuration method that adds new pages to the site. `acetate.generator` takes a single argument which is a function that recives 3 arguments:
+`acetate.generator` is a configuration method that adds new pages to the site. `acetate.generator` takes a single argument which is a function that receives 3 arguments:
 
 * `pages` - an array of all existing pages in the site. This is useful for generating pages that index other pages like a blog feed or archive page.
 * `createPage(src, template, metdata)` - a function which will generate a new page object with a given `src` property, `template` and `metadata`.

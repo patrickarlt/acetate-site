@@ -4,13 +4,13 @@ topic: Modes
 order: 10
 ---
 
-Acetates server mode is a [Browsersync](https://www.browsersync.io/) based live reloading server with the following features:
+Acetate's server mode uses [Browsersync](https://www.browsersync.io/) as a live reloading server with the following features:
 
 * Live reloading of pages during editing
 * In browser console and fullscreen error messages
 * Page metadata appears in browser
 
-Fast startup and rendering times even for large sites.
+Fast startup and rendering times, even for large sites.
 
 *Module*: `acetate/lib/modes/server`
 
@@ -39,7 +39,7 @@ server.reload()
 // use server.stop() to stop the server
 ```
 
-In general, you can pass any [Browsersync options](https://www.browsersync.io/docs/options/) to the server mode as a second argument. However, Acetate will modify any options in the following way:
+In general, you can pass any [Browsersync options](https://www.browsersync.io/docs/options/) to the server mode as a second argument. However, Acetate will modify options in the following way:
 
 * `logPrefix` will always be Acetate
 * `logLevel` will always match Acetates log level

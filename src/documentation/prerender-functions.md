@@ -4,7 +4,7 @@ topic: Advanced
 order: 80
 ---
 
-Although it would be possible to request external data with other helpers like `acetate.transformAllAsync` it would happen every time a page needs to be rendered. In server mode this would cause external data to be requested every time a page was requested even is that data had nothing to do with that page.
+Although it's possible to request external data with other helpers like `acetate.transformAllAsync` this would happen every time a page needs to be rendered. In server mode this would cause external data to be requested every time a page was requested even if the data had nothing to do with that page.
 
 `acetate.prerender(pattern, handler)` will execute the `handler` function only before rendering a page that matches the `pattern`. `handler` will be called with the `page` object and a callback function that accepts `error` and the modified `page` object.
 

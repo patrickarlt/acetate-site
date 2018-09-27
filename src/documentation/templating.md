@@ -14,7 +14,7 @@ In general you should refer to the [Nunjucks templating documentation](https://m
 
 You can print a variable in Nunjucks by wrapping it in double curly braces like `{% raw %}{{ variable }}{% endraw %}`.
 
-Unlike other templating libraries Nunjucks does not autoescape content by default. But you can use the `escape` filter`{% raw %}{{ variable | escape }}{% endraw %}`.
+Unlike other templating libraries Nunjucks does not auto-escape content by default. But you can use the `escape` filter`{% raw %}{{ variable | escape }}{% endraw %}`.
 
 If you need to render Nunjucks syntax You can use a `raw` tag. See the [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html#raw) for details.
 

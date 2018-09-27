@@ -4,7 +4,7 @@ topic: Basic
 order: 30
 ---
 
-Acetate does not load any pages by default. Generally it is a good idea to load all HTML and Markdown files in your source folder.
+Acetate does not load any pages by default. Generally you'll load all HTML and Markdown files in your source folder.
 
 <code class="filename">acetate.config.js</code>
 
@@ -14,7 +14,7 @@ module.exports = function (acetate) {
 };
 ```
 
-Once page are loaded they can be processed, manipulated and ultimately built to disk or served by Acetate's build in server.
+Once pages are loaded they can be processed, manipulated and ultimately written to disk or served by Acetate's built in server.
 
 ## Ignoring Pages
 
