@@ -12,7 +12,7 @@ The build mode builds all files to the output directory. The builder will not bu
 var Acetate = require('acetate');
 var builder = require('acetate/lib/modes/builder');
 
-var aceate = new Acetate({
+var acetate = new Acetate({
   // ignore: true
 });
 
