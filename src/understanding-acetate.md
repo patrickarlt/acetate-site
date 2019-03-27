@@ -61,7 +61,7 @@ module.exports = function (acetate) {
 
 ### The Render Phase
 
-After Acetate has transformed all the pages in the site, pages are ready for rendering. Rendering a page first runs any [prerender functions](/documentation/prerender-functions/)P that apply to the page.
+After Acetate has transformed all the pages in the site, pages are ready for rendering. Rendering a page first runs any [prerender functions](/documentation/prerender-functions/) that apply to the page.
 
 [Prerender functions](/documentation/prerender-functions/) are ideal for pages that require expensive async operations before the page gets rendered. Prerendering functions are only run before the individual page is rendered, rather then as a part of the transformation phase which is run before *any* page is rendered.
 
